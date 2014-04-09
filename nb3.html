@@ -3,7 +3,7 @@
       xmlns:og="http://ogp.me/ns#"
       xmlns:fb="https://www.facebook.com/2008/fbml">
 <head>
-    <title>STAT133Project</title>
+    <title>Data Analysis</title>
     <!-- Using the latest rendering mode for IE -->
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta charset="utf-8">
@@ -1717,10 +1717,10 @@ init_mathjax();
 
 
     <!-- Open Graph tags -->
-            <meta property="og:type" content="website"/>
-            <meta property="og:title" content="STAT133Project"/>
-            <meta property="og:url" content="http://yuchengzhang.github.io/STAT133Project"/>
-            <meta property="og:description" content="STAT133Project"/>
+            <meta property="og:type" content="article"/>
+            <meta property="og:title" content="Data Analysis"/>
+            <meta property="og:url" content="http://yuchengzhang.github.io/STAT133Project/nb3.html"/>
+            <meta property="og:description" content="Team members responsible for this notebook: team member 1 Yucheng Zhang - found differentially expressed genes between male and female and helped with heatmaps team member 2 Renee Rao - found differentially expressed genes between male and female and helped with heatmaps team member 3 Rebeccah Lavelle Terhune - found differentially expressed genes ..."/>
 
     <!-- Bootstrap -->
         <link rel="stylesheet" href="http://yuchengzhang.github.io/STAT133Project/theme/css/bootstrap.min.css" type="text/css"/>
@@ -1788,65 +1788,718 @@ STAT133Project            </a>
     <div class="row">
         <div class="col-sm-9">
 
-            <article>
-                <h2><a href="http://yuchengzhang.github.io/STAT133Project/nb4.html">Project Report</a></h2>
-                <div class="summary"><p>
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>In this notebook, you'll sumarize your finding for the class presentation.</p>
-<p>The class presentation will use this notebook in slide mode, as I do during lecture time.</p>
-<p>You'll need to download the following <a href="https://github.com/fperez/nb-slideshow-template/archive/master.zip">zip file</a>, unzip it, and run the following notebook <code>install-support.ipynb</code> to install the slide ...</p></div></p>
-                    <a class="btn btn-default btn-xs" href="http://yuchengzhang.github.io/STAT133Project/nb4.html">more ...</a>
+    <section id="content">
+        <article>
+            <header class="page-header">
+                <h1>
+                    <a href="http://yuchengzhang.github.io/STAT133Project/nb3.html"
+                       rel="bookmark"
+                       title="Permalink to Data Analysis">
+                        Data Analysis
+                    </a>
+                </h1>
+            </header>
+            <div class="entry-content">
+                <div class="panel">
+                    <div class="panel-body">
+<footer class="post-info">
+    <span class="label label-default">Date</span>
+    <span class="published">
+        <i class="fa fa-calendar"></i><time datetime="2014-03-03T00:00:00">Mon 03 March 2014</time>
+    </span>
+
+
+
+    
+</footer><!-- /.post-info -->                    </div>
                 </div>
-            </article>
-            <hr/>
-            <article>
-                <h2><a href="http://yuchengzhang.github.io/STAT133Project/nb3.html">Data Analysis</a></h2>
-                <div class="summary"><p>
+                <p>
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="team-members-responsible-for-this-notebook">Team members responsible for this notebook:</h2>
 <ul>
 <li><p>team member 1 <strong>Yucheng Zhang</strong> - found differentially expressed genes between male and female and helped with heatmaps</p></li>
 <li><p>team member 2 <strong>Renee Rao</strong> - found differentially expressed genes between male and female and helped with heatmaps</p></li>
-<li><p>team member 3 <strong>Rebeccah Lavelle Terhune</strong> - found differentially expressed genes ...</p></li></ul></div></p>
-                    <a class="btn btn-default btn-xs" href="http://yuchengzhang.github.io/STAT133Project/nb3.html">more ...</a>
-                </div>
-            </article>
-            <hr/>
-            <article>
-                <h2><a href="http://yuchengzhang.github.io/STAT133Project/nb2.html">Data Cleaning</a></h2>
-                <div class="summary"><p>
+<li><p>team member 3 <strong>Rebeccah Lavelle Terhune</strong> - found differentially expressed genes between male and female and helped with heatmaps</p></li>
+<li><p>team member 4 <strong>Philip Hong</strong> - found differentially expressed genes between male and female and helped with heatmaps</p></li>
+</ul>
+</div>
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>In this notebook, you'll</p>
-<ul>
-<li><p><strong>load the raw data into R or Pandas dataframe</strong> from the <code>./data/raw</code> directory using the functions and classes (written during the data gathering phase) in the <code>./script</code> directory</p></li>
-<li><p><strong>perform visual exploration</strong> on your data variables to detect anomalies, errors, outliers, interesting features etc.</p></li>
-<li><p><strong>clean ...</strong></p></li></ul></div></p>
-                    <a class="btn btn-default btn-xs" href="http://yuchengzhang.github.io/STAT133Project/nb2.html">more ...</a>
-                </div>
-            </article>
-            <hr/>
-            <article>
-                <h2><a href="http://yuchengzhang.github.io/STAT133Project/nb1.html">Data Gathering</a></h2>
-                <div class="summary"><p>
+<h1 id="Data-Analysis">Data Analysis<a class="anchor-link" href="#Data-Analysis">&#182;</a></h1>
+</div>
+
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="team-members-responsible-for-this-notebook">Team members responsible for this notebook:</h2>
+<p><strong>Load rmagic</strong></p>
+</div>
+<div class="cell border-box-sizing code_cell vbox">
+<div class="input hbox">
+<div class="prompt input_prompt">
+In&nbsp;[1]:
+</div>
+<div class="input_area box-flex1">
+<div class="highlight-ipynb"><pre class="ipynb"><span class="o">%</span><span class="k">load_ext</span> <span class="n">rmagic</span>
+</pre></div>
+
+</div>
+</div>
+
+</div>
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><strong>Load Biobase and GEOquery then use getGEO method of GEOquery to load bio_data.soft.gz into data, a S4 object</strong></p>
 <ul>
-<li><p>team member 1 <strong>Yucheng Zhang</strong> - explored possibility of using bash and python to get data into correct format and wrote markdown</p></li>
-<li><p>team member 2 <strong>Rebeccah Lavelle Terhune</strong> - discovered way to format data with excel</p></li>
-<li><p>team member 3 <strong>Philip Hong</strong> - converted excel data into csv ...</p></li></ul></div></p>
-                    <a class="btn btn-default btn-xs" href="http://yuchengzhang.github.io/STAT133Project/nb1.html">more ...</a>
-                </div>
-            </article>
-            <hr/>
-            <article>
-                <h2><a href="http://yuchengzhang.github.io/STAT133Project/reproducibility.html">Reproducibility</a></h2>
-                <div class="summary"><h1>Reproducibility</h1>
-<h2>Virtual OskiBox</h2>
-<h2>Software Requirements</h2>
-                    <a class="btn btn-default btn-xs" href="http://yuchengzhang.github.io/STAT133Project/reproducibility.html">more ...</a>
-                </div>
-            </article>
-            <hr/>
+<li>the S4 class which is a set of facilities in R provided for object oriented programming, and highly used in bioconductor</li>
+</ul>
+</div>
+<div class="cell border-box-sizing code_cell vbox">
+<div class="input hbox">
+<div class="prompt input_prompt">
+In&nbsp;[2]:
+</div>
+<div class="input_area box-flex1">
+<div class="highlight-ipynb"><pre class="ipynb"><span class="o">%%</span><span class="k">R</span>
+<span class="n">library</span><span class="p">(</span><span class="n">Biobase</span><span class="p">)</span>
+<span class="n">library</span><span class="p">(</span><span class="n">GEOquery</span><span class="p">)</span>
+
+<span class="n">bio_dir</span> <span class="o">=</span> <span class="s">&#39;../data/raw/bio_data.soft.gz&#39;</span>
+<span class="n">data</span> <span class="o">=</span> <span class="n">getGEO</span><span class="p">(</span><span class="n">filename</span><span class="o">=</span><span class="n">bio_dir</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+
+<div class="vbox output_wrapper">
+<div class="output vbox">
+
+
+<div class="hbox output_area"><div class="prompt"></div>
+<div class="box-flex1 output_subarea output_display_data">
+
+
+<pre>
+Loading required package: BiocGenerics
+Loading required package: parallel
+
+Attaching package: ‘BiocGenerics’
+
+The following objects are masked from ‘package:parallel’:
+
+    clusterApply, clusterApplyLB, clusterCall, clusterEvalQ,
+    clusterExport, clusterMap, parApply, parCapply, parLapply,
+    parLapplyLB, parRapply, parSapply, parSapplyLB
+
+The following object is masked from ‘package:stats’:
+
+    xtabs
+
+The following objects are masked from ‘package:base’:
+
+    anyDuplicated, append, as.data.frame, as.vector, cbind, colnames,
+    duplicated, eval, evalq, Filter, Find, get, intersect, is.unsorted,
+    lapply, Map, mapply, match, mget, order, paste, pmax, pmax.int,
+    pmin, pmin.int, Position, rank, rbind, Reduce, rep.int, rownames,
+    sapply, setdiff, sort, table, tapply, union, unique, unlist
+
+Welcome to Bioconductor
+
+    Vignettes contain introductory material; view with
+    &apos;browseVignettes()&apos;. To cite Bioconductor, see
+    &apos;citation(&quot;Biobase&quot;)&apos;, and for packages &apos;citation(&quot;pkgname&quot;)&apos;.
+
+Setting options(&apos;download.file.method.GEOquery&apos;=&apos;curl&apos;)
+
+</pre>
+
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><strong>Create expression set bio_eset from data</strong></p>
+<ul>
+<li>we could not find a way to save the expression set so we had to recreate it in this notebook</li>
+</ul>
+</div>
+<div class="cell border-box-sizing code_cell vbox">
+<div class="input hbox">
+<div class="prompt input_prompt">
+In&nbsp;[3]:
+</div>
+<div class="input_area box-flex1">
+<div class="highlight-ipynb"><pre class="ipynb"><span class="o">%%</span><span class="k">R</span>
+<span class="n">bio_eset</span> <span class="o">=</span> <span class="n">GDS2eSet</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">do</span><span class="o">.</span><span class="n">log2</span><span class="o">=</span><span class="n">TRUE</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+
+<div class="vbox output_wrapper">
+<div class="output vbox">
+
+
+<div class="hbox output_area"><div class="prompt"></div>
+<div class="box-flex1 output_subarea output_display_data">
+
+
+<pre>
+File stored at: 
+/tmp/RtmpeZBEyd/GPL570.annot.gz
+
+</pre>
+
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><strong>Create gender expression set by taking only the gender variable label from the entire expression set</strong></p>
+</div>
+<div class="cell border-box-sizing code_cell vbox">
+<div class="input hbox">
+<div class="prompt input_prompt">
+In&nbsp;[4]:
+</div>
+<div class="input_area box-flex1">
+<div class="highlight-ipynb"><pre class="ipynb"><span class="o">%%</span><span class="k">R</span>
+<span class="n">gender_eset</span> <span class="o">=</span> <span class="n">bio_eset</span><span class="p">[,</span> <span class="n">bio_eset</span><span class="err">$</span><span class="n">gender</span> <span class="o">%</span><span class="k">in</span><span class="o">%</span> <span class="n">c</span><span class="p">(</span><span class="s">&#39;female&#39;</span><span class="p">,</span> <span class="s">&#39;male&#39;</span><span class="p">)]</span>
+</pre></div>
+
+</div>
+</div>
+
+</div>
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><strong>Install limma package of bioconductor so we can analyze the expression set</strong></p>
+</div>
+<div class="cell border-box-sizing code_cell vbox">
+<div class="input hbox">
+<div class="prompt input_prompt">
+In&nbsp;[6]:
+</div>
+<div class="input_area box-flex1">
+<div class="highlight-ipynb"><pre class="ipynb"><span class="o">%%</span><span class="k">R</span>
+<span class="n">source</span><span class="p">(</span><span class="s">&quot;http://www.bioconductor.org/biocLite.R&quot;</span><span class="p">)</span>
+<span class="n">biocLite</span><span class="p">(</span><span class="s">&quot;limma&quot;</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+
+<div class="vbox output_wrapper">
+<div class="output vbox">
+
+
+<div class="hbox output_area"><div class="prompt"></div>
+<div class="box-flex1 output_subarea output_display_data">
+
+
+<pre>
+Bioconductor version 2.13 (BiocInstaller 1.12.0), ?biocLite for help
+BioC_mirror: http://bioconductor.org
+Using Bioconductor version 2.13 (BiocInstaller 1.12.0), R version 3.0.3.
+Installing package(s) &apos;limma&apos;
+trying URL &apos;http://bioconductor.org/packages/2.13/bioc/src/contrib/limma_3.18.13.tar.gz&apos;
+Content type &apos;application/x-gzip&apos; length 1048134 bytes (1023 Kb)
+opened URL
+==================================================
+downloaded 1023 Kb
+
+
+The downloaded source packages are in
+	‘/tmp/RtmpeZBEyd/downloaded_packages’
+
+</pre>
+
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><strong>Load the limma package in order to compare differentially expressed genes between male and female with lmFit and then use eBayes to produce a Bayes test statistic for each gene</strong></p>
+</div>
+<div class="cell border-box-sizing code_cell vbox">
+<div class="input hbox">
+<div class="prompt input_prompt">
+In&nbsp;[13]:
+</div>
+<div class="input_area box-flex1">
+<div class="highlight-ipynb"><pre class="ipynb"><span class="o">%%</span><span class="k">R</span>
+<span class="n">library</span><span class="p">(</span><span class="n">limma</span><span class="p">)</span>
+
+<span class="n">f</span> <span class="o">=</span> <span class="n">factor</span><span class="p">(</span><span class="k">as</span><span class="o">.</span><span class="n">character</span><span class="p">(</span><span class="n">gender_eset</span><span class="err">$</span><span class="n">gender</span><span class="p">))</span>
+<span class="n">design</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">matrix</span><span class="p">(</span><span class="o">~</span><span class="n">f</span><span class="p">)</span>
+<span class="n">fit</span> <span class="o">=</span> <span class="n">eBayes</span><span class="p">(</span><span class="n">lmFit</span><span class="p">(</span><span class="n">gender_eset</span><span class="p">,</span> <span class="n">design</span><span class="p">))</span>
+
+<span class="k">print</span><span class="p">(</span><span class="n">topTable</span><span class="p">(</span><span class="n">fit</span><span class="p">,</span> <span class="n">coef</span><span class="o">=</span><span class="mi">2</span><span class="p">))</span>
+</pre></div>
+
+</div>
+</div>
+
+<div class="vbox output_wrapper">
+<div class="output vbox">
+
+
+<div class="hbox output_area"><div class="prompt"></div>
+<div class="box-flex1 output_subarea output_display_data">
+
+
+<pre>
+                     ID                                            Gene.title
+201909_at     201909_at                      ribosomal protein S4, Y-linked 1
+205000_at     205000_at    DEAD (Asp-Glu-Ala-Asp) box polypeptide 3, Y-linked
+206700_s_at 206700_s_at                    lysine (K)-specific demethylase 5D
+224588_at     224588_at   X inactive specific transcript (non-protein coding)
+224590_at     224590_at   X inactive specific transcript (non-protein coding)
+221728_x_at 221728_x_at   X inactive specific transcript (non-protein coding)
+228492_at     228492_at              ubiquitin specific peptidase 9, Y-linked
+227671_at     227671_at   X inactive specific transcript (non-protein coding)
+214218_s_at 214218_s_at   X inactive specific transcript (non-protein coding)
+204409_s_at 204409_s_at eukaryotic translation initiation factor 1A, Y-linked
+            Gene.symbol Gene.ID UniGene.title UniGene.symbol UniGene.ID
+201909_at        RPS4Y1    6192                                        
+205000_at         DDX3Y    8653                                        
+206700_s_at       KDM5D    8284                                        
+224588_at          XIST    7503                                        
+224590_at          XIST    7503                                        
+221728_x_at        XIST    7503                                        
+228492_at         USP9Y    8287                                        
+227671_at          XIST    7503                                        
+214218_s_at        XIST    7503                                        
+204409_s_at      EIF1AY    9086                                        
+                                                                                                                       Nucleotide.Title
+201909_at                                                                  Homo sapiens ribosomal protein S4, Y-linked 1 (RPS4Y1), mRNA
+205000_at                           Homo sapiens DEAD (Asp-Glu-Ala-Asp) box polypeptide 3, Y-linked (DDX3Y), transcript variant 2, mRNA
+206700_s_at                                         Homo sapiens lysine (K)-specific demethylase 5D (KDM5D), transcript variant 2, mRNA
+224588_at                         zp08h11.s1 Stratagene ovarian cancer (#937219) Homo sapiens cDNA clone IMAGE:595845 3-, mRNA sequence
+224590_at                                7e61e05.x1 Soares_NSF_F8_9W_OT_PA_P_S1 Homo sapiens cDNA clone IMAGE:3286976 3-, mRNA sequence
+221728_x_at                             af26f02.s1 Soares_total_fetus_Nb2HF8_9w Homo sapiens cDNA clone IMAGE:1032795 3-, mRNA sequence
+228492_at                                                               AV681765 GKB Homo sapiens cDNA clone GKBAKH05 5-, mRNA sequence
+227671_at                                                               AV646597 GLC Homo sapiens cDNA clone GLCAPB04 3-, mRNA sequence
+214218_s_at                                                             AV699347 GKC Homo sapiens cDNA clone GKCBPH07 3-, mRNA sequence
+204409_s_at Homo sapiens eukaryotic translation initiation factor 1A, Y-linked, mRNA (cDNA clone MGC:12282 IMAGE:3933718), complete cds
+                   GI GenBank.Accession Platform_CLONEID Platform_ORF
+201909_at    71164879         NM_001008                              
+205000_at   169881237         NM_004660                              
+206700_s_at 226442994         NM_004653                              
+224588_at     1745836          AA167449                              
+224590_at     9969228          BE644917                              
+221728_x_at   2540827          AA628440                              
+228492_at    10283628          AV681765                              
+227671_at     9867611          AV646597                              
+214218_s_at  10301318          AV699347                              
+204409_s_at  13528902          BC005248                              
+            Platform_SPOTID Chromosome.location
+201909_at                                Yp11.3
+205000_at                                  Yq11
+206700_s_at                                Yq11
+224588_at                                Xq13.2
+224590_at                                Xq13.2
+221728_x_at                              Xq13.2
+228492_at                                Yq11.2
+227671_at                                Xq13.2
+214218_s_at                              Xq13.2
+204409_s_at                            Yq11.223
+                                                  Chromosome.annotation
+201909_at                  Chromosome Y, NC_000024.9 (2709623..2734997)
+205000_at                Chromosome Y, NC_000024.9 (15016019..15032390)
+206700_s_at  Chromosome Y, NC_000024.9 (21867301..21906825, complement)
+224588_at   Chromosome X, NC_000023.10 (73040486..73072588, complement)
+224590_at   Chromosome X, NC_000023.10 (73040486..73072588, complement)
+221728_x_at Chromosome X, NC_000023.10 (73040486..73072588, complement)
+228492_at                Chromosome Y, NC_000024.9 (14813160..14972768)
+227671_at   Chromosome X, NC_000023.10 (73040486..73072588, complement)
+214218_s_at Chromosome X, NC_000023.10 (73040486..73072588, complement)
+204409_s_at              Chromosome Y, NC_000024.9 (22737611..22755040)
+                                                                                                                                                                                                                                                                                                                                                                                                                                        GO.Function
+201909_at                                                                                                                                                                                                                                                                                                                                                                           RNA binding///rRNA binding///structural constituent of ribosome
+205000_at                                                                                                                                                                                                                                                                                                                                                                 ATP binding///ATP-dependent helicase activity///DNA binding///RNA binding
+206700_s_at DNA binding///histone demethylase activity (H3-K4 specific)///molecular_function///oxidoreductase activity, acting on paired donors, with incorporation or reduction of molecular oxygen, 2-oxoglutarate as one donor, and incorporation of one atom each of oxygen into both donors///oxidoreductase activity, acting on single donors with incorporation of molecular oxygen, incorporation of two atoms of oxygen///zinc ion binding
+224588_at                                                                                                                                                                                                                                                                                                                                                                                                                                          
+224590_at                                                                                                                                                                                                                                                                                                                                                                                                                                          
+221728_x_at                                                                                                                                                                                                                                                                                                                                                                                                                                        
+228492_at                                                                                                                                                                                                                                                                                                              co-SMAD binding///cysteine-type peptidase activity///ubiquitin thiolesterase activity///ubiquitin-specific protease activity
+227671_at                                                                                                                                                                                                                                                                                                                                                                                                                                          
+214218_s_at                                                                                                                                                                                                                                                                                                                                                                                                                                        
+204409_s_at                                                                                                                                                                                                                                                                                                                                                                                protein binding///translation initiation factor activity
+                                                                                                                                                                                                                                                                                                                                                                                                                                                               GO.Process
+201909_at   RNA metabolic process///SRP-dependent cotranslational protein targeting to membrane///cellular protein metabolic process///gene expression///mRNA metabolic process///multicellular organismal development///nuclear-transcribed mRNA catabolic process, nonsense-mediated decay///translation///translation///translational elongation///translational initiation///translational termination///viral infectious cycle///viral process///viral transcription
+205000_at                                                                                                                                                                                                                                                                                                                                                                                                                                                                
+206700_s_at                                                                                                                                                                                                                                                                                                                                                                                                                 histone H3-K4 demethylation///spermatogenesis
+224588_at                                                                                                                                                                                                                                                                                                                                                                                                                                                                
+224590_at                                                                                                                                                                                                                                                                                                                                                                                                                                                                
+221728_x_at                                                                                                                                                                                                                                                                                                                                                                                                                                                              
+228492_at                                                                                                                                                                                                                                                                                 BMP signaling pathway///protein deubiquitination///spermatogenesis///transforming growth factor beta receptor signaling pathway///ubiquitin-dependent protein catabolic process
+227671_at                                                                                                                                                                                                                                                                                                                                                                                                                                                                
+214218_s_at                                                                                                                                                                                                                                                                                                                                                                                                                                                              
+204409_s_at                                                                                                                                                                                                                                                                                                                                                                                                                                                              
+                                                      GO.Component
+201909_at   cytosol///cytosolic small ribosomal subunit///polysome
+205000_at                                      cytoplasm///nucleus
+206700_s_at                           cellular_component///nucleus
+224588_at                                                         
+224590_at                                                         
+221728_x_at                                                       
+228492_at                                                cytoplasm
+227671_at                                                         
+214218_s_at                                                       
+204409_s_at                                                       
+                                                                         GO.Function.ID
+201909_at                                          GO:0003723///GO:0019843///GO:0003735
+205000_at                             GO:0005524///GO:0008026///GO:0003677///GO:0003723
+206700_s_at GO:0003677///GO:0032453///GO:0003674///GO:0016706///GO:0016702///GO:0008270
+224588_at                                                                              
+224590_at                                                                              
+221728_x_at                                                                            
+228492_at                             GO:0070410///GO:0008234///GO:0004221///GO:0004843
+227671_at                                                                              
+214218_s_at                                                                            
+204409_s_at                                                     GO:0005515///GO:0003743
+                                                                                                                                                                                               GO.Process.ID
+201909_at   GO:0016070///GO:0006614///GO:0044267///GO:0010467///GO:0016071///GO:0007275///GO:0000184///GO:0006412///GO:0006412///GO:0006414///GO:0006413///GO:0006415///GO:0019058///GO:0016032///GO:0019083
+205000_at                                                                                                                                                                                                   
+206700_s_at                                                                                                                                                                          GO:0034720///GO:0007283
+224588_at                                                                                                                                                                                                   
+224590_at                                                                                                                                                                                                   
+221728_x_at                                                                                                                                                                                                 
+228492_at                                                                                                                                     GO:0030509///GO:0016579///GO:0007283///GO:0007179///GO:0006511
+227671_at                                                                                                                                                                                                   
+214218_s_at                                                                                                                                                                                                 
+204409_s_at                                                                                                                                                                                                 
+                                 GO.Component.ID      logFC  AveExpr         t
+201909_at   GO:0005829///GO:0022627///GO:0005844  1.2133490 2.805267  27.23195
+205000_at                GO:0005737///GO:0005634  1.1198149 2.662534  24.09635
+206700_s_at              GO:0005575///GO:0005634  0.9281921 2.497675  22.70541
+224588_at                                        -1.2565863 2.374414 -18.84680
+224590_at                                        -1.0764458 2.135451 -18.13994
+221728_x_at                                      -1.0966994 2.324549 -17.84966
+228492_at                             GO:0005737  0.9073558 2.510601  17.30428
+227671_at                                        -1.0444901 2.324972 -16.99075
+214218_s_at                                      -1.0181132 2.257599 -16.93839
+204409_s_at                                       0.8836463 2.439978  15.49406
+                 P.Value    adj.P.Val        B
+201909_at   1.860828e-41 1.017408e-36 66.92499
+205000_at   9.128076e-38 2.495388e-33 61.85168
+206700_s_at 5.223292e-36 9.519449e-32 59.27901
+224588_at   1.094914e-30 1.496610e-26 50.90923
+224590_at   1.236270e-29 1.351861e-25 49.15600
+221728_x_at 3.403207e-29 3.101173e-25 48.41460
+228492_at   2.344997e-28 1.831610e-24 46.98707
+227671_at   7.231066e-28 4.941982e-24 46.14567
+214218_s_at 8.737451e-28 5.308001e-24 46.00367
+204409_s_at 1.850801e-25 1.011925e-21 41.91427
+
+</pre>
+
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><strong>Select genes that have a P value smaller than 0.01</strong></p>
+</div>
+<div class="cell border-box-sizing code_cell vbox">
+<div class="input hbox">
+<div class="prompt input_prompt">
+In&nbsp;[19]:
+</div>
+<div class="input_area box-flex1">
+<div class="highlight-ipynb"><pre class="ipynb"><span class="o">%%</span><span class="k">R</span>
+<span class="n">selected</span> <span class="o">=</span> <span class="n">p</span><span class="o">.</span><span class="n">adjust</span><span class="p">(</span><span class="n">fit</span><span class="err">$</span><span class="n">p</span><span class="o">.</span><span class="n">value</span><span class="p">[,</span> <span class="mi">2</span><span class="p">])</span> <span class="o">&lt;</span> <span class="mf">0.01</span>
+<span class="n">eset_selected</span> <span class="o">=</span> <span class="n">gender_eset</span><span class="p">[</span><span class="n">selected</span><span class="p">,</span> <span class="p">]</span> 
+</pre></div>
+
+</div>
+</div>
+
+</div>
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><strong>Install gplots package of bioconductor so that we can use heatmap.2 to give a key to our heatmap</strong></p>
+</div>
+<div class="cell border-box-sizing code_cell vbox">
+<div class="input hbox">
+<div class="prompt input_prompt">
+In&nbsp;[22]:
+</div>
+<div class="input_area box-flex1">
+<div class="highlight-ipynb"><pre class="ipynb"><span class="o">%%</span><span class="k">R</span>
+<span class="n">biocLite</span><span class="p">(</span><span class="s">&quot;gplots&quot;</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+
+<div class="vbox output_wrapper">
+<div class="output vbox">
+
+
+<div class="hbox output_area"><div class="prompt"></div>
+<div class="box-flex1 output_subarea output_display_data">
+
+
+<pre>
+BioC_mirror: http://bioconductor.org
+Using Bioconductor version 2.13 (BiocInstaller 1.12.0), R version 3.0.3.
+Installing package(s) &apos;gplots&apos;
+also installing the dependencies ‘gtools’, ‘gdata’, ‘caTools’
+
+trying URL &apos;http://cran.fhcrc.org/src/contrib/gtools_3.3.1.tar.gz&apos;
+Content type &apos;application/x-gzip&apos; length 54766 bytes (53 Kb)
+opened URL
+==================================================
+downloaded 53 Kb
+
+trying URL &apos;http://cran.fhcrc.org/src/contrib/gdata_2.13.3.tar.gz&apos;
+Content type &apos;application/x-gzip&apos; length 717134 bytes (700 Kb)
+opened URL
+==================================================
+downloaded 700 Kb
+
+trying URL &apos;http://cran.fhcrc.org/src/contrib/caTools_1.16.tar.gz&apos;
+Content type &apos;application/x-gzip&apos; length 63331 bytes (61 Kb)
+opened URL
+==================================================
+downloaded 61 Kb
+
+trying URL &apos;http://cran.fhcrc.org/src/contrib/gplots_2.13.0.tar.gz&apos;
+Content type &apos;application/x-gzip&apos; length 380211 bytes (371 Kb)
+opened URL
+==================================================
+downloaded 371 Kb
+
+
+The downloaded source packages are in
+	‘/tmp/RtmpeZBEyd/downloaded_packages’
+
+</pre>
+
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><strong>Create a heatmap comparing gene expression levels between male and females, also color code for which subjects are male (red) and which are female (blue) then save the heatmap in ../visualizations</strong></p>
+<ul>
+<li>we need to load gplots to access heatmap.2 which will let us add the key</li>
+</ul>
+</div>
+<div class="cell border-box-sizing code_cell vbox">
+<div class="input hbox">
+<div class="prompt input_prompt">
+In&nbsp;[38]:
+</div>
+<div class="input_area box-flex1">
+<div class="highlight-ipynb"><pre class="ipynb"><span class="o">%%</span><span class="k">R</span>
+<span class="n">library</span><span class="p">(</span><span class="n">gplots</span><span class="p">)</span>
+
+<span class="n">color</span><span class="o">.</span><span class="n">map</span> <span class="o">=</span> <span class="n">function</span><span class="p">(</span><span class="n">gender</span><span class="p">){</span> <span class="k">if</span><span class="p">(</span><span class="n">gender</span><span class="o">==</span><span class="s">&quot;female&quot;</span><span class="p">)</span> <span class="s">&quot;#FF0000&quot;</span> <span class="k">else</span> <span class="s">&quot;#0000FF&quot;</span> <span class="p">}</span>
+<span class="n">patientcolors</span> <span class="o">=</span> <span class="n">unlist</span><span class="p">(</span><span class="n">lapply</span><span class="p">(</span><span class="n">eset_selected</span><span class="err">$</span><span class="n">gender</span><span class="p">,</span> <span class="n">color</span><span class="o">.</span><span class="n">map</span><span class="p">))</span>
+    
+<span class="n">png</span><span class="p">(</span><span class="nb">file</span> <span class="o">=</span> <span class="s">&quot;../visualizations/malefemale.png&quot;</span><span class="p">)</span>
+<span class="n">heatmap</span><span class="o">.</span><span class="mi">2</span><span class="p">(</span><span class="n">exprs</span><span class="p">(</span><span class="n">eset_selected</span><span class="p">),</span> <span class="n">col</span><span class="o">=</span><span class="n">topo</span><span class="o">.</span><span class="n">colors</span><span class="p">(</span><span class="mi">100</span><span class="p">),</span> <span class="n">scale</span><span class="o">=</span><span class="s">&quot;none&quot;</span><span class="p">,</span> <span class="n">ColSideColors</span><span class="o">=</span><span class="n">patientcolors</span><span class="p">,</span>
+          <span class="n">key</span><span class="o">=</span><span class="n">TRUE</span><span class="p">,</span> <span class="n">symkey</span><span class="o">=</span><span class="n">FALSE</span><span class="p">,</span> <span class="n">density</span><span class="o">.</span><span class="n">info</span><span class="o">=</span><span class="s">&quot;none&quot;</span><span class="p">,</span> <span class="n">trace</span><span class="o">=</span><span class="s">&quot;none&quot;</span><span class="p">,</span> <span class="n">cexRow</span><span class="o">=.</span><span class="mi">9</span><span class="p">)</span>
+<span class="n">dev</span><span class="o">.</span><span class="n">off</span><span class="p">()</span>
+</pre></div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell vbox">
+<div class="input hbox">
+<div class="prompt input_prompt">
+In&nbsp;[39]:
+</div>
+<div class="input_area box-flex1">
+<div class="highlight-ipynb"><pre class="ipynb"><span class="o">%%</span><span class="k">R</span>
+<span class="n">install</span><span class="o">.</span><span class="n">packages</span><span class="p">(</span><span class="s">&quot;png&quot;</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+
+<div class="vbox output_wrapper">
+<div class="output vbox">
+
+
+<div class="hbox output_area"><div class="prompt"></div>
+<div class="box-flex1 output_subarea output_display_data">
+
+
+<pre>
+Installing package into ‘/home/oski/R/x86_64-pc-linux-gnu-library/3.0’
+(as ‘lib’ is unspecified)
+--- Please select a CRAN mirror for use in this session ---
+trying URL &apos;http://cran.stat.ucla.edu/src/contrib/png_0.1-7.tar.gz&apos;
+Content type &apos;application/x-tar&apos; length 24990 bytes (24 Kb)
+opened URL
+==================================================
+downloaded 24 Kb
+
+
+The downloaded source packages are in
+	‘/tmp/RtmpeZBEyd/downloaded_packages’
+
+</pre>
+
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><strong>Need to install imagemagick in order to be able to use EBImage to open png files</strong></p>
+<ul>
+<li>sudo apt-get install libmagickwand-dev imagemagick</li>
+</ul>
+<p><em>installed in terminal because it prompts for user input</em></p>
+<p><strong>Installed EBImage package</strong></p>
+</div>
+<div class="cell border-box-sizing code_cell vbox">
+<div class="input hbox">
+<div class="prompt input_prompt">
+In&nbsp;[55]:
+</div>
+<div class="input_area box-flex1">
+<div class="highlight-ipynb"><pre class="ipynb"><span class="o">%%</span><span class="k">R</span>
+<span class="n">biocLite</span><span class="p">(</span><span class="s">&quot;EBImage&quot;</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+
+<div class="vbox output_wrapper">
+<div class="output vbox">
+
+
+<div class="hbox output_area"><div class="prompt"></div>
+<div class="box-flex1 output_subarea output_display_data">
+
+
+<pre>
+BioC_mirror: http://bioconductor.org
+Using Bioconductor version 2.13 (BiocInstaller 1.12.0), R version 3.0.3.
+Installing package(s) &apos;EBImage&apos;
+also installing the dependency ‘tiff’
+
+trying URL &apos;http://cran.stat.ucla.edu/src/contrib/tiff_0.1-5.tar.gz&apos;
+Content type &apos;application/x-tar&apos; length 28925 bytes (28 Kb)
+opened URL
+==================================================
+downloaded 28 Kb
+
+trying URL &apos;http://bioconductor.org/packages/2.13/bioc/src/contrib/EBImage_4.4.0.tar.gz&apos;
+Content type &apos;application/x-gzip&apos; length 4026518 bytes (3.8 Mb)
+opened URL
+==================================================
+downloaded 3.8 Mb
+
+
+The downloaded source packages are in
+	‘/tmp/RtmpeZBEyd/downloaded_packages’
+
+</pre>
+
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><strong>Load EBI image and open up our male female heatmap</strong></p>
+</div>
+<div class="cell border-box-sizing code_cell vbox">
+<div class="input hbox">
+<div class="prompt input_prompt">
+In&nbsp;[56]:
+</div>
+<div class="input_area box-flex1">
+<div class="highlight-ipynb"><pre class="ipynb"><span class="o">%%</span><span class="k">R</span>
+<span class="n">library</span><span class="p">(</span><span class="n">EBImage</span><span class="p">)</span>
+
+<span class="n">plot</span><span class="o">.</span><span class="n">new</span><span class="p">()</span>
+<span class="n">malefemale</span> <span class="o">=</span> <span class="n">readImage</span><span class="p">(</span><span class="s">&quot;../visualizations/malefemale.png&quot;</span><span class="p">)</span>
+<span class="n">display</span><span class="p">(</span><span class="n">malefemale</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+
+<div class="vbox output_wrapper">
+<div class="output vbox">
+
+
+<div class="hbox output_area"><div class="prompt"></div>
+<div class="box-flex1 output_subarea output_display_data">
+
+
+<pre>
+
+Attaching package: ‘EBImage’
+
+The following object is masked from ‘package:Biobase’:
+
+    channel
+
+
+</pre>
+
+</div>
+</div>
+
+<div class="hbox output_area"><div class="prompt"></div>
+<div class="box-flex1 output_subarea output_display_data">
+
+
+<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAeAAAAHgCAMAAABKCk6nAAAAA1BMVEX///+nxBvIAAAA9klEQVR4
+nO3BAQ0AAADCoPdPbQ8HFAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAD8G4YNAAGL73n/AAAAAElFTkSuQmCC
+">
+
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell vbox">
+<div class="input hbox">
+<div class="prompt input_prompt">
+In&nbsp;[]:
+</div>
+<div class="input_area box-flex1">
+<div class="highlight-ipynb"><pre class="ipynb">
+</pre></div>
+
+</div>
+</div>
+
+</div></p>
+            </div>
+            <!-- /.entry-content -->
+        </article>
+    </section>
 
         </div>
         <div class="col-sm-3 well well-sm" id="sidebar">
