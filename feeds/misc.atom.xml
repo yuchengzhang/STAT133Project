@@ -712,16 +712,6 @@ In&amp;nbsp;[]:
 
 &lt;/div&gt;&lt;/p&gt;</summary></entry><entry><title>Data Cleaning</title><link href="http://yuchengzhang.github.io/STAT133Project/nb2.html" rel="alternate"></link><updated>2014-03-02T00:00:00-08:00</updated><author><name>Benoit Dherin</name></author><id>tag:yuchengzhang.github.io,2014-03-02:STAT133Project/nb2.html</id><summary type="html">&lt;p&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;p&gt;In this notebook, you'll&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;p&gt;&lt;strong&gt;load the raw data into R or Pandas dataframe&lt;/strong&gt; from the &lt;code&gt;./data/raw&lt;/code&gt; directory using the functions and classes (written during the data gathering phase) in the &lt;code&gt;./script&lt;/code&gt; directory&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;&lt;strong&gt;perform visual exploration&lt;/strong&gt; on your data variables to detect anomalies, errors, outliers, interesting features etc.&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;&lt;strong&gt;clean categorical and quantitative variables&lt;/strong&gt; (by removing observations and variables with too many missing values, by consolidating categorical variables, by selecting an appropriate subset of variables and observations for later analysis, etc.)&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;&lt;strong&gt;save the cleaned data&lt;/strong&gt; into csv files in the &lt;code&gt;./data/cleaned&lt;/code&gt; directory&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;&lt;strong&gt;save interesting graphics&lt;/strong&gt; you obtained during visual exploration into the &lt;code&gt;./visualiation&lt;/code&gt; directory&lt;/p&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/div&gt;
-&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
 &lt;h2 id="team-members-responsible-for-this-notebook"&gt;Team members responsible for this notebook:&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;team member 1 &lt;strong&gt;Yucheng Zhang&lt;/strong&gt; - made expression set and wrote markdown&lt;/li&gt;
