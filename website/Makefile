@@ -1,7 +1,7 @@
 ##################################################################################
 # Replace below with the corresponding info for your fork of the github repository 
 ##################################################################################
-GITHUB_REPOSITORY=https://github.com/philiphong93/TCFSProject
+GITHUB_REPOSITORY=https://github.com/yuchengzhang/STAT133Project
 ##################################################################################
 
 

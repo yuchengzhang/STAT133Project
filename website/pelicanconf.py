@@ -7,10 +7,10 @@ import os
 # AUTHORSHIP AND WEBSITE INFO (Replace accordingly)
 ###################################################
 
-AUTHOR = u'Philip Hong'
-SITENAME = u'TCFSProject'
+AUTHOR = u'Yucheng Zhang'
+SITENAME = u'STAT133Project'
 SITESUBTITLE = u'Team Too Cool for School Project'
-GITHUB_REPOSITORY_URL = u'https://github.com/philiphong93/TCFSProejct'
+GITHUB_REPOSITORY_URL = u'https://github.com/yuchengzhang/STAT133Project'
 
 ###################################################
 # FINER WEBSITE CONF (Defaults should be okay)
