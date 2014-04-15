@@ -1720,7 +1720,7 @@ init_mathjax();
             <meta property="og:type" content="article"/>
             <meta property="og:title" content="Data Cleaning"/>
             <meta property="og:url" content="http://yuchengzhang.github.io/STAT133Project/nb2.html"/>
-            <meta property="og:description" content="Team members responsible for this notebook: team member 1 Yucheng Zhang - made expression set and wrote markdown, saved eset as .Rda file team member 2 Renee Rao - figured out limma and bioconductor team member 3 Philip Hong - helped troubleshoot bioconductor and limma install team member 4 Rebeccah Lavelle Terhune - helped ..."/>
+            <meta property="og:description" content="Team members responsible for this notebook: Team member 1: Yucheng Zhang - made expression set and wrote markdown, saved eset as .Rda file. Team member 2: Renee Rao - figured out limma and Bioconductor. Team member 3: Philip Hong - helped troubleshoot Bioconductor and limma installation. Team member 4: Rebeccah Lavelle Terhune - helped ..."/>
 
     <!-- Bootstrap -->
         <link rel="stylesheet" href="http://yuchengzhang.github.io/STAT133Project/theme/css/bootstrap.min.css" type="text/css"/>
@@ -1817,18 +1817,18 @@ STAT133Project            </a>
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="team-members-responsible-for-this-notebook">Team members responsible for this notebook:</h2>
 <ul>
-<li>team member 1 <strong>Yucheng Zhang</strong> - made expression set and wrote markdown, saved eset as .Rda file</li>
-<li>team member 2 <strong>Renee Rao</strong> - figured out limma and bioconductor</li>
-<li>team member 3 <strong>Philip Hong</strong> - helped troubleshoot bioconductor and limma install</li>
-<li>team member 4 <strong>Rebeccah Lavelle Terhune</strong> - helped troubleshoot bioconductor and limma install</li>
+<li><p>Team member 1: <strong>Yucheng Zhang</strong> - made expression set and wrote markdown, saved eset as .Rda file.</p></li>
+<li><p>Team member 2: <strong>Renee Rao</strong> - figured out limma and Bioconductor.</p></li>
+<li><p>Team member 3: <strong>Philip Hong</strong> - helped troubleshoot Bioconductor and limma installation.</p></li>
+<li><p>Team member 4: <strong>Rebeccah Lavelle Terhune</strong> - helped troubleshoot Bioconductor and limma installation.</p></li>
 </ul>
 </div>
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Data-Cleaning">Data Cleaning<a class="anchor-link" href="#Data-Cleaning">&#182;</a></h2>
+<h1 id="Data-Cleaning">Data Cleaning<a class="anchor-link" href="#Data-Cleaning">&#182;</a></h1>
 </div>
 
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><strong>Load rmagic</strong></p>
+<p><strong>Load rmagic:</strong></p>
 </div>
 <div class="cell border-box-sizing code_cell vbox">
 <div class="input hbox">
@@ -1844,9 +1844,9 @@ In&nbsp;[1]:
 
 </div>
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><strong>Load Biobase and GEOquery then use getGEO method of GEOquery to load bio_data.soft.gz into data, a S4 object</strong></p>
+<p>(From Notebook 1) Loaded <strong>Biobase</strong> and <strong>GEOquery</strong> then used <code>getGEO</code> method of <code>GEOquery</code> to load <strong><code>bio_data.soft.gz</code></strong> into data, an <strong>S4 object</strong>.</p>
 <ul>
-<li>the S4 class which is a set of facilities in R provided for object oriented programming, and highly used in bioconductor</li>
+<li>The S4 class is a set of facilities in R provided for object oriented programming, and is highly used in Bioconductor.</li>
 </ul>
 </div>
 <div class="cell border-box-sizing code_cell vbox">
@@ -1893,10 +1893,11 @@ The following object is masked from ‘package:stats’:
 The following objects are masked from ‘package:base’:
 
     anyDuplicated, append, as.data.frame, as.vector, cbind, colnames,
-    duplicated, eval, evalq, Filter, Find, get, intersect, is.unsorted,
-    lapply, Map, mapply, match, mget, order, paste, pmax, pmax.int,
-    pmin, pmin.int, Position, rank, rbind, Reduce, rep.int, rownames,
-    sapply, setdiff, sort, table, tapply, union, unique, unlist
+    do.call, duplicated, eval, evalq, Filter, Find, get, intersect,
+    is.unsorted, lapply, Map, mapply, match, mget, order, paste, pmax,
+    pmax.int, pmin, pmin.int, Position, rank, rbind, Reduce, rep.int,
+    rownames, sapply, setdiff, sort, table, tapply, union, unique,
+    unlist
 
 Welcome to Bioconductor
 
@@ -1916,10 +1917,11 @@ Setting options(&apos;download.file.method.GEOquery&apos;=&apos;curl&apos;)
 
 </div>
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><strong>Convert data into a bioconductor expression set, also log2 transforms the data</strong></p>
-<ul>
-<li>we need to transform the data into an expression set so that we can use the bioconductor limma package to analyze it</li>
-</ul>
+<h2 id="Creating-an-Expression-Set-Object">Creating an Expression Set Object<a class="anchor-link" href="#Creating-an-Expression-Set-Object">&#182;</a></h2>
+</div>
+
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Since we our primary interest is in expression data for the tissue samples, we needed to turn our GDS (GEO Dataset) object into an <strong>expression set object</strong> in order to take advantage of the powerful tools Bioconductor provides to explore gene expression. To do this we used the built in <code>GEOquery</code> function, <code>GDS2eSet</code>, which extracts expression data from GDS objects. To make computations more efficent, we used base two algorithms.</p>
 </div>
 <div class="cell border-box-sizing code_cell vbox">
 <div class="input hbox">
@@ -1944,7 +1946,7 @@ In&nbsp;[3]:
 
 <pre>
 File stored at: 
-/tmp/RtmpcZFcoi/GPL570.annot.gz
+/tmp/RtmpfFNwMG/GPL570.annot.gz
 
 </pre>
 
@@ -1956,12 +1958,15 @@ File stored at:
 
 </div>
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><strong>Make sure that data converted correctly</strong></p>
+<p><strong>To ensure that the data was correctly converted, we examined <code>bio_eset</code> below:</strong></p>
+</div>
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>First we viewed the object to make sure it was the right type.</p>
 </div>
 <div class="cell border-box-sizing code_cell vbox">
 <div class="input hbox">
 <div class="prompt input_prompt">
-In&nbsp;[21]:
+In&nbsp;[4]:
 </div>
 <div class="input_area box-flex1">
 <div class="highlight-ipynb"><pre class="ipynb"><span class="o">%%</span><span class="k">R</span>
@@ -2006,16 +2011,17 @@ Annotation:
 
 </div>
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><strong>A further check to make sure data converted correctly, retrieved the data for gene 1007_s_at of subject GSM918603</strong></p>
+<p>We then further checked to make sure that all of the data was converted correctly. To this end, we retrieved several expression values for different gene/patient pairs and checked that they matched with expression values in the original dataset. An example for the gene <code>1007_s_at</code> of subject <code>GSM918603</code> is below. All our data points matched the original set.</p>
 </div>
 <div class="cell border-box-sizing code_cell vbox">
 <div class="input hbox">
 <div class="prompt input_prompt">
-In&nbsp;[28]:
+In&nbsp;[5]:
 </div>
 <div class="input_area box-flex1">
 <div class="highlight-ipynb"><pre class="ipynb"><span class="o">%%</span><span class="k">R</span>
 <span class="k">print</span><span class="p">(</span><span class="n">bio_eset</span><span class="p">[</span><span class="s">&quot;1007_s_at&quot;</span><span class="p">,</span> <span class="s">&quot;GSM918603&quot;</span><span class="p">])</span>
+<span class="k">print</span><span class="p">(</span><span class="n">exprs</span><span class="p">(</span><span class="n">bio_eset</span><span class="p">[</span><span class="s">&quot;1007_s_at&quot;</span><span class="p">,</span> <span class="s">&quot;GSM918603&quot;</span><span class="p">]))</span>
 </pre></div>
 
 </div>
@@ -2045,6 +2051,8 @@ featureData
 experimentData: use &apos;experimentData(object)&apos;
   pubMedIds: 22722829 
 Annotation:  
+          GSM918603
+1007_s_at  2.757211
 
 </pre>
 
@@ -2056,12 +2064,16 @@ Annotation:
 
 </div>
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><strong>Install bioconductor package pvca which is required to save and load .Rda files</strong></p>
+<h2 id="Saving-the-Cleaned-File">Saving the Cleaned File<a class="anchor-link" href="#Saving-the-Cleaned-File">&#182;</a></h2>
+</div>
+
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>We installed the Bioconductor package <strong><code>pvca</code></strong> which is required to save and load R objects into <strong>.Rda</strong> files, and then saved our cleaned and properly formatted data set to the <code>../data/cleaned</code> directory within our project repository.</p>
 </div>
 <div class="cell border-box-sizing code_cell vbox">
 <div class="input hbox">
 <div class="prompt input_prompt">
-In&nbsp;[7]:
+In&nbsp;[6]:
 </div>
 <div class="input_area box-flex1">
 <div class="highlight-ipynb"><pre class="ipynb"><span class="o">%%</span><span class="k">R</span>
@@ -2081,45 +2093,19 @@ In&nbsp;[7]:
 
 
 <pre>
-Bioconductor version 2.13 (BiocInstaller 1.12.0), ?biocLite for help
+Bioconductor version 3.0 (BiocInstaller 1.15.1), ?biocLite for help
 BioC_mirror: http://bioconductor.org
-Using Bioconductor version 2.13 (BiocInstaller 1.12.0), R version 3.0.3.
+Using Bioconductor version 3.0 (BiocInstaller 1.15.1), R version 3.1.0.
 Installing package(s) &apos;pvca&apos;
-also installing the dependencies ‘minqa’, ‘RcppEigen’, ‘vsn’, ‘lme4’
-
-trying URL &apos;http://cran.fhcrc.org/src/contrib/minqa_1.2.3.tar.gz&apos;
-Content type &apos;application/x-gzip&apos; length 53211 bytes (51 Kb)
+trying URL &apos;http://bioconductor.org/packages/3.0/bioc/src/contrib/pvca_1.5.0.tar.gz&apos;
+Content type &apos;application/x-gzip&apos; length 128153 bytes (125 Kb)
 opened URL
 ==================================================
-downloaded 51 Kb
-
-trying URL &apos;http://cran.fhcrc.org/src/contrib/RcppEigen_0.3.2.1.1.tar.gz&apos;
-Content type &apos;application/x-gzip&apos; length 1253994 bytes (1.2 Mb)
-opened URL
-==================================================
-downloaded 1.2 Mb
-
-trying URL &apos;http://bioconductor.org/packages/2.13/bioc/src/contrib/vsn_3.30.0.tar.gz&apos;
-Content type &apos;application/x-gzip&apos; length 1427031 bytes (1.4 Mb)
-opened URL
-==================================================
-downloaded 1.4 Mb
-
-trying URL &apos;http://cran.fhcrc.org/src/contrib/lme4_1.1-6.tar.gz&apos;
-Content type &apos;application/x-gzip&apos; length 2783146 bytes (2.7 Mb)
-opened URL
-==================================================
-downloaded 2.7 Mb
-
-trying URL &apos;http://bioconductor.org/packages/2.13/bioc/src/contrib/pvca_1.2.0.tar.gz&apos;
-Content type &apos;application/x-gzip&apos; length 126523 bytes (123 Kb)
-opened URL
-==================================================
-downloaded 123 Kb
+downloaded 125 Kb
 
 
 The downloaded source packages are in
-	‘/tmp/RtmpcZFcoi/downloaded_packages’
+	‘/tmp/RtmpfFNwMG/downloaded_packages’
 
 </pre>
 
@@ -2131,18 +2117,31 @@ The downloaded source packages are in
 
 </div>
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><strong>Save our expression set as a .Rda file so that we can easily access the data for data analysis</strong></p>
+<p>In the cell below we saved our expression set as a .Rda file so that we can easily access our data for the remainder of the project.</p>
 </div>
 <div class="cell border-box-sizing code_cell vbox">
 <div class="input hbox">
 <div class="prompt input_prompt">
-In&nbsp;[9]:
+In&nbsp;[7]:
 </div>
 <div class="input_area box-flex1">
 <div class="highlight-ipynb"><pre class="ipynb"><span class="o">%%</span><span class="k">R</span>
 <span class="n">library</span><span class="p">(</span><span class="n">pvca</span><span class="p">)</span>
 
 <span class="n">save</span><span class="p">(</span><span class="n">bio_eset</span><span class="p">,</span> <span class="nb">file</span><span class="o">=</span><span class="s">&quot;../data/cleaned/bio_eset.Rda&quot;</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell vbox">
+<div class="input hbox">
+<div class="prompt input_prompt">
+In&nbsp;[]:
+</div>
+<div class="input_area box-flex1">
+<div class="highlight-ipynb"><pre class="ipynb">
 </pre></div>
 
 </div>
