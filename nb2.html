@@ -1720,7 +1720,7 @@ init_mathjax();
             <meta property="og:type" content="article"/>
             <meta property="og:title" content="Data Cleaning"/>
             <meta property="og:url" content="http://yuchengzhang.github.io/STAT133Project/nb2.html"/>
-            <meta property="og:description" content="Team members responsible for this notebook: team member 1 Yucheng Zhang - made expression set and wrote markdown team member 2 Renee Rao - figured out limma and bioconductor team member 3 Philip Hong - helped troubleshoot bioconductor and limma install team member 4 Rebeccah Lavelle Terhune - helped troubleshoot bioconductor and limma install ..."/>
+            <meta property="og:description" content="Team members responsible for this notebook: team member 1 Yucheng Zhang - made expression set and wrote markdown, saved eset as .Rda file team member 2 Renee Rao - figured out limma and bioconductor team member 3 Philip Hong - helped troubleshoot bioconductor and limma install team member 4 Rebeccah Lavelle Terhune - helped ..."/>
 
     <!-- Bootstrap -->
         <link rel="stylesheet" href="http://yuchengzhang.github.io/STAT133Project/theme/css/bootstrap.min.css" type="text/css"/>
@@ -1817,7 +1817,7 @@ STAT133Project            </a>
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="team-members-responsible-for-this-notebook">Team members responsible for this notebook:</h2>
 <ul>
-<li>team member 1 <strong>Yucheng Zhang</strong> - made expression set and wrote markdown</li>
+<li>team member 1 <strong>Yucheng Zhang</strong> - made expression set and wrote markdown, saved eset as .Rda file</li>
 <li>team member 2 <strong>Renee Rao</strong> - figured out limma and bioconductor</li>
 <li>team member 3 <strong>Philip Hong</strong> - helped troubleshoot bioconductor and limma install</li>
 <li>team member 4 <strong>Rebeccah Lavelle Terhune</strong> - helped troubleshoot bioconductor and limma install</li>
@@ -1852,7 +1852,7 @@ In&nbsp;[1]:
 <div class="cell border-box-sizing code_cell vbox">
 <div class="input hbox">
 <div class="prompt input_prompt">
-In&nbsp;[30]:
+In&nbsp;[2]:
 </div>
 <div class="input_area box-flex1">
 <div class="highlight-ipynb"><pre class="ipynb"><span class="o">%%</span><span class="k">R</span>
@@ -1862,6 +1862,54 @@ In&nbsp;[30]:
 <span class="n">bio_dir</span> <span class="o">=</span> <span class="s">&#39;../data/raw/bio_data.soft.gz&#39;</span>
 <span class="n">data</span> <span class="o">=</span> <span class="n">getGEO</span><span class="p">(</span><span class="n">filename</span><span class="o">=</span><span class="n">bio_dir</span><span class="p">)</span>
 </pre></div>
+
+</div>
+</div>
+
+<div class="vbox output_wrapper">
+<div class="output vbox">
+
+
+<div class="hbox output_area"><div class="prompt"></div>
+<div class="box-flex1 output_subarea output_display_data">
+
+
+<pre>
+Loading required package: BiocGenerics
+Loading required package: parallel
+
+Attaching package: ‘BiocGenerics’
+
+The following objects are masked from ‘package:parallel’:
+
+    clusterApply, clusterApplyLB, clusterCall, clusterEvalQ,
+    clusterExport, clusterMap, parApply, parCapply, parLapply,
+    parLapplyLB, parRapply, parSapply, parSapplyLB
+
+The following object is masked from ‘package:stats’:
+
+    xtabs
+
+The following objects are masked from ‘package:base’:
+
+    anyDuplicated, append, as.data.frame, as.vector, cbind, colnames,
+    duplicated, eval, evalq, Filter, Find, get, intersect, is.unsorted,
+    lapply, Map, mapply, match, mget, order, paste, pmax, pmax.int,
+    pmin, pmin.int, Position, rank, rbind, Reduce, rep.int, rownames,
+    sapply, setdiff, sort, table, tapply, union, unique, unlist
+
+Welcome to Bioconductor
+
+    Vignettes contain introductory material; view with
+    &apos;browseVignettes()&apos;. To cite Bioconductor, see
+    &apos;citation(&quot;Biobase&quot;)&apos;, and for packages &apos;citation(&quot;pkgname&quot;)&apos;.
+
+Setting options(&apos;download.file.method.GEOquery&apos;=&apos;curl&apos;)
+
+</pre>
+
+</div>
+</div>
 
 </div>
 </div>
@@ -1876,7 +1924,7 @@ In&nbsp;[30]:
 <div class="cell border-box-sizing code_cell vbox">
 <div class="input hbox">
 <div class="prompt input_prompt">
-In&nbsp;[6]:
+In&nbsp;[3]:
 </div>
 <div class="input_area box-flex1">
 <div class="highlight-ipynb"><pre class="ipynb"><span class="o">%%</span><span class="k">R</span>
@@ -1895,8 +1943,8 @@ In&nbsp;[6]:
 
 
 <pre>
-Using locally cached version of GPL570 found here:
-/tmp/RtmpsbTe5B/GPL570.annot.gz 
+File stored at: 
+/tmp/RtmpcZFcoi/GPL570.annot.gz
 
 </pre>
 
@@ -2002,6 +2050,100 @@ Annotation:
 
 </div>
 </div>
+
+</div>
+</div>
+
+</div>
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><strong>Install bioconductor package pvca which is required to save and load .Rda files</strong></p>
+</div>
+<div class="cell border-box-sizing code_cell vbox">
+<div class="input hbox">
+<div class="prompt input_prompt">
+In&nbsp;[7]:
+</div>
+<div class="input_area box-flex1">
+<div class="highlight-ipynb"><pre class="ipynb"><span class="o">%%</span><span class="k">R</span>
+<span class="n">source</span><span class="p">(</span><span class="s">&quot;http://bioconductor.org/biocLite.R&quot;</span><span class="p">)</span>
+<span class="n">biocLite</span><span class="p">(</span><span class="s">&quot;pvca&quot;</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+
+<div class="vbox output_wrapper">
+<div class="output vbox">
+
+
+<div class="hbox output_area"><div class="prompt"></div>
+<div class="box-flex1 output_subarea output_display_data">
+
+
+<pre>
+Bioconductor version 2.13 (BiocInstaller 1.12.0), ?biocLite for help
+BioC_mirror: http://bioconductor.org
+Using Bioconductor version 2.13 (BiocInstaller 1.12.0), R version 3.0.3.
+Installing package(s) &apos;pvca&apos;
+also installing the dependencies ‘minqa’, ‘RcppEigen’, ‘vsn’, ‘lme4’
+
+trying URL &apos;http://cran.fhcrc.org/src/contrib/minqa_1.2.3.tar.gz&apos;
+Content type &apos;application/x-gzip&apos; length 53211 bytes (51 Kb)
+opened URL
+==================================================
+downloaded 51 Kb
+
+trying URL &apos;http://cran.fhcrc.org/src/contrib/RcppEigen_0.3.2.1.1.tar.gz&apos;
+Content type &apos;application/x-gzip&apos; length 1253994 bytes (1.2 Mb)
+opened URL
+==================================================
+downloaded 1.2 Mb
+
+trying URL &apos;http://bioconductor.org/packages/2.13/bioc/src/contrib/vsn_3.30.0.tar.gz&apos;
+Content type &apos;application/x-gzip&apos; length 1427031 bytes (1.4 Mb)
+opened URL
+==================================================
+downloaded 1.4 Mb
+
+trying URL &apos;http://cran.fhcrc.org/src/contrib/lme4_1.1-6.tar.gz&apos;
+Content type &apos;application/x-gzip&apos; length 2783146 bytes (2.7 Mb)
+opened URL
+==================================================
+downloaded 2.7 Mb
+
+trying URL &apos;http://bioconductor.org/packages/2.13/bioc/src/contrib/pvca_1.2.0.tar.gz&apos;
+Content type &apos;application/x-gzip&apos; length 126523 bytes (123 Kb)
+opened URL
+==================================================
+downloaded 123 Kb
+
+
+The downloaded source packages are in
+	‘/tmp/RtmpcZFcoi/downloaded_packages’
+
+</pre>
+
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><strong>Save our expression set as a .Rda file so that we can easily access the data for data analysis</strong></p>
+</div>
+<div class="cell border-box-sizing code_cell vbox">
+<div class="input hbox">
+<div class="prompt input_prompt">
+In&nbsp;[9]:
+</div>
+<div class="input_area box-flex1">
+<div class="highlight-ipynb"><pre class="ipynb"><span class="o">%%</span><span class="k">R</span>
+<span class="n">library</span><span class="p">(</span><span class="n">pvca</span><span class="p">)</span>
+
+<span class="n">save</span><span class="p">(</span><span class="n">bio_eset</span><span class="p">,</span> <span class="nb">file</span><span class="o">=</span><span class="s">&quot;../data/cleaned/bio_eset.Rda&quot;</span><span class="p">)</span>
+</pre></div>
 
 </div>
 </div>
