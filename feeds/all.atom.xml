@@ -21,13 +21,121 @@ pdflatex NB4_report.tex&lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
 &lt;h2 id="team-members-responsible-for-this-notebook"&gt;Team members responsible for this notebook:&lt;/h2&gt;
-&lt;p&gt;List the team members contributing to this notebook, along with their responsabilities:&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;team member 1 &lt;strong&gt;name&lt;/strong&gt;: team member 1 &lt;strong&gt;responsabilities&lt;/strong&gt;&lt;/li&gt;
-&lt;li&gt;team member 2 &lt;strong&gt;name&lt;/strong&gt;: team member 2 &lt;strong&gt;responsabilities&lt;/strong&gt;&lt;/li&gt;
-&lt;li&gt;etc.&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Team member 1: &lt;strong&gt;Yucheng Zhang&lt;/strong&gt; -&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Team member 2: &lt;strong&gt;Rebeccah Lavelle Terhune&lt;/strong&gt; -&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Team member 3: &lt;strong&gt;Philip Hong&lt;/strong&gt; -&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Team member 4: &lt;strong&gt;Renee Rao&lt;/strong&gt; -&lt;/p&gt;&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;I advise you to work at least in pairs for each project notebook, as you did for the homework assignments. Of course, all team members may participate to each notebook.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
+&lt;h1 id="Problem"&gt;Problem&lt;a class="anchor-link" href="#Problem"&gt;&amp;#182;&lt;/a&gt;&lt;/h1&gt;
+&lt;/div&gt;
+
+&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
+&lt;p&gt;We got our gene expression data from a study in which the the subtypes of cancer discovered by the original authors of the paper had significantly different gender distributions, especially across the WNT and G3 subtypes which were 75% female and 93.75% male, respectively. We wanted to isolate the gene cluster that is associated with the gender disparity between the molecular subgroups.&lt;/p&gt;
+&lt;p&gt;Because differentially expressed genes may not affect actual clinical outcomes (i.e., type of Medulloblastoma), we first located genes that were differentially expressed between male and female patients, then out of these genes, we found the genes that were also differentially expressed between subgroups to ensure that the gene cluster we obtained was both significant between gender and disease subtype and actually affects clinical outcomes.&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;Note: we only had data about 76 patients, 3 of which were either outliers or could not be subtyped. Furthermore, of the patients who could be subtyped 21 were female while 52 were male, so please take our results with a grain of salt.&lt;/em&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
+&lt;h1 id="Difficulties-with-Data"&gt;Difficulties with Data&lt;a class="anchor-link" href="#Difficulties-with-Data"&gt;&amp;#182;&lt;/a&gt;&lt;/h1&gt;
+&lt;/div&gt;
+
+&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
+&lt;p&gt;We wished to do a project using biological data but were unsure how to go about obtaining sufficiently a large dataset that was freely available for analysis, because of this, we decided to work with a gene expression data set, as many interesting data sets are available from the Gene Expression Omnibus repository of the National Center for Biotechnology Information’s website which are amenable to analysis, as soft.gz files.&lt;/p&gt;
+&lt;p&gt;It took our group a while to find a dataset that was of sufficient interest to all members before we settled on a study about gene expression levels in tumor tissue samples of patients with the brain cancer Medulloblastoma. Once we had chosen our topic, actually getting the data was fairly easy: we simply used the provided download link.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;ftp://ftp.ncbi.nlm.nih.gov/geo/datasets/GDS4nnn/GDS4471/soft/GDS4471.soft.gz&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;The format of the data did make it somewhat challenging to load as it had been designed to be analyzed with a very specific set of tools. Although we did create a &lt;code&gt;.csv&lt;/code&gt; file of the data, some of the gene names were corrupted and we were unable to index through it by category (i.e. gender). However, once we obtained the required software and installed it properly, we were able to load and analyze our data with ease.&lt;/p&gt;
+&lt;p&gt;The NCBI recommends using the software &lt;code&gt;Bioconductor&lt;/code&gt; for analysis of this type of data set, as it was specifically designed for working with gene expression data sets and efficiently indexing through them, other &lt;code&gt;Bioconductor&lt;/code&gt; packages we used to analyze our data included, &lt;code&gt;Biobase&lt;/code&gt;, a necessary package for both &lt;code&gt;GEOquery&lt;/code&gt;, and &lt;code&gt;limma&lt;/code&gt;. &lt;code&gt;GEOquery&lt;/code&gt;, was used to transform the &lt;code&gt;.soft&lt;/code&gt; file into a &lt;code&gt;GDS&lt;/code&gt; object, which gave us access to meta data and a table of our expression data and then used to transform our data from a GDS object to an expression set (&lt;code&gt;eset&lt;/code&gt;) object, so that it could be analyzed using limma. &lt;code&gt;limma&lt;/code&gt; was used to find differentially expressed genes between our chosen samples&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
+&lt;h1 id="Main-Challenge"&gt;Main Challenge&lt;a class="anchor-link" href="#Main-Challenge"&gt;&amp;#182;&lt;/a&gt;&lt;/h1&gt;
+&lt;/div&gt;
+
+&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
+&lt;p&gt;The main challenge we encountered as a group was collectively understanding exactly what our dataset represented. For example, our data set contained gene expression information of tumors from various cancer patients, but it was not intuitively clear what the matrix of gene names and expression levels actually meant, which, correspondingly, made it harder to decide on an interesting question.&lt;/p&gt;
+&lt;p&gt;Loading our data and properly installing Bioconductor proved to be the true bottleneck in our project though. We initially did not realize we had to use specialized software to load our &lt;code&gt;.soft&lt;/code&gt; file and so we spent several hours loading it into a &lt;code&gt;.csv&lt;/code&gt; file, only to lose key parts of the data set. We discovered that we needed &lt;code&gt;Bioconductor &lt;/code&gt; to properly read and index through our dataset . However, it was quite a Sisyphean ordeal to install &lt;code&gt;Bioconductor&lt;/code&gt; and its necessary packages, taking several days and a visit with the professor. “My God”&lt;/p&gt;
+&lt;p&gt;To get the necessary packages working, we first had to install &lt;code&gt;libcurl&lt;/code&gt; and &lt;code&gt;r-cran-xml&lt;/code&gt;, in order to get &lt;code&gt;GEOquery&lt;/code&gt; working. This was particularly arduous as installation constantly failed across multiple Oskiboxes, we have the sublime opportunity to witness the natural enforcement of Murphy’s Law.&lt;br /&gt;However, once these problems were resolved, the only difficulties were determining what further packages were required to help analyze the data. (i.e. &lt;code&gt;gplots&lt;/code&gt;, &lt;code&gt;pvca&lt;/code&gt;.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
+&lt;h1 id="Presentation-of-Findings"&gt;Presentation of Findings&lt;a class="anchor-link" href="#Presentation-of-Findings"&gt;&amp;#182;&lt;/a&gt;&lt;/h1&gt;
+&lt;/div&gt;
+
+&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
+&lt;p&gt;For those of you who may not remember their Intro to Biology class, all living things are made of cells. All cells have genes and depending on what that function that particular cell is carrying out, different genes will be translated into proteins. So even though all our cells contain our full genome, only certain parts of our genome will used within any single cell. Cancer cells, which are cells whose growth can no longer be controlled through normal cellular pathways, will translate a different set of genes into proteins than healthy cells will. By using a DNA microarray scientists are able to quantify which genes are being expressed within cells. The data we analyzed was the ‘expression’ or translation levels of over 54,000 genes (of which around 29,000 were unique) for 76 different tumors from patients with a form of cancer known as Medulloblastoma.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing code_cell vbox"&gt;
+&lt;div class="input hbox"&gt;
+&lt;div class="prompt input_prompt"&gt;
+In&amp;nbsp;[1]:
+&lt;/div&gt;
+&lt;div class="input_area box-flex1"&gt;
+&lt;div class="highlight-ipynb"&gt;&lt;pre class="ipynb"&gt;&lt;span class="o"&gt;%&lt;/span&gt;&lt;span class="k"&gt;load_ext&lt;/span&gt; &lt;span class="n"&gt;rmagic&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing code_cell vbox"&gt;
+&lt;div class="input hbox"&gt;
+&lt;div class="prompt input_prompt"&gt;
+In&amp;nbsp;[11]:
+&lt;/div&gt;
+&lt;div class="input_area box-flex1"&gt;
+&lt;div class="highlight-ipynb"&gt;&lt;pre class="ipynb"&gt;&lt;span class="o"&gt;%%&lt;/span&gt;&lt;span class="k"&gt;R&lt;/span&gt;
+&lt;span class="n"&gt;c_names&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;paste&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;&amp;#39;Patient&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="mi"&gt;3&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;sep&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;&amp;#39; &amp;#39;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="n"&gt;r_names&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;paste&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;&amp;#39;Gene&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;LETTERS&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="mi"&gt;3&lt;/span&gt;&lt;span class="p"&gt;],&lt;/span&gt; &lt;span class="n"&gt;sep&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;&amp;#39; &amp;#39;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+
+&lt;span class="n"&gt;categories&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;c&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;&amp;#39;High&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s"&gt;&amp;#39;Medium&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s"&gt;&amp;#39;Low&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="n"&gt;data&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;sample&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;categories&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;size&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="mi"&gt;9&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;replace&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="n"&gt;TRUE&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;prob&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="n"&gt;c&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="mi"&gt;3&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="mi"&gt;3&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="mi"&gt;3&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
+
+&lt;span class="n"&gt;df&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;data&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;frame&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;matrix&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;data&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;nrow&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="mi"&gt;3&lt;/span&gt;&lt;span class="p"&gt;),&lt;/span&gt; &lt;span class="n"&gt;row&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;names&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="n"&gt;r_names&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="n"&gt;colnames&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;df&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;c_names&lt;/span&gt;
+
+&lt;span class="k"&gt;print&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;df&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class="vbox output_wrapper"&gt;
+&lt;div class="output vbox"&gt;
+
+
+&lt;div class="hbox output_area"&gt;&lt;div class="prompt"&gt;&lt;/div&gt;
+&lt;div class="box-flex1 output_subarea output_display_data"&gt;
+
+
+&lt;pre&gt;
+       Patient 1 Patient 2 Patient 3
+Gene A      High      High       Low
+Gene B       Low    Medium       Low
+Gene C      High       Low       Low
+
+&lt;/pre&gt;
+
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing code_cell vbox"&gt;
+&lt;div class="input hbox"&gt;
+&lt;div class="prompt input_prompt"&gt;
+In&amp;nbsp;[]:
+&lt;/div&gt;
+&lt;div class="input_area box-flex1"&gt;
+&lt;div class="highlight-ipynb"&gt;&lt;pre class="ipynb"&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;/div&gt;
+&lt;/div&gt;
+
 &lt;/div&gt;&lt;/p&gt;</summary></entry><entry><title>Data Analysis</title><link href="http://yuchengzhang.github.io/STAT133Project/nb3.html" rel="alternate"></link><updated>2014-03-03T00:00:00-08:00</updated><author><name>Benoit Dherin</name></author><id>tag:yuchengzhang.github.io,2014-03-03:STAT133Project/nb3.html</id><summary type="html">&lt;p&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
 &lt;h2 id="team-members-responsible-for-this-notebook"&gt;Team members responsible for this notebook:&lt;/h2&gt;

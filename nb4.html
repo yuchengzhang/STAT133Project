@@ -1835,13 +1835,121 @@ pdflatex NB4_report.tex</code></pre>
 </div>
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="team-members-responsible-for-this-notebook">Team members responsible for this notebook:</h2>
-<p>List the team members contributing to this notebook, along with their responsabilities:</p>
 <ul>
-<li>team member 1 <strong>name</strong>: team member 1 <strong>responsabilities</strong></li>
-<li>team member 2 <strong>name</strong>: team member 2 <strong>responsabilities</strong></li>
-<li>etc.</li>
+<li><p>Team member 1: <strong>Yucheng Zhang</strong> -</p></li>
+<li><p>Team member 2: <strong>Rebeccah Lavelle Terhune</strong> -</p></li>
+<li><p>Team member 3: <strong>Philip Hong</strong> -</p></li>
+<li><p>Team member 4: <strong>Renee Rao</strong> -</p></li>
 </ul>
-<p>I advise you to work at least in pairs for each project notebook, as you did for the homework assignments. Of course, all team members may participate to each notebook.</p>
+</div>
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="Problem">Problem<a class="anchor-link" href="#Problem">&#182;</a></h1>
+</div>
+
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>We got our gene expression data from a study in which the the subtypes of cancer discovered by the original authors of the paper had significantly different gender distributions, especially across the WNT and G3 subtypes which were 75% female and 93.75% male, respectively. We wanted to isolate the gene cluster that is associated with the gender disparity between the molecular subgroups.</p>
+<p>Because differentially expressed genes may not affect actual clinical outcomes (i.e., type of Medulloblastoma), we first located genes that were differentially expressed between male and female patients, then out of these genes, we found the genes that were also differentially expressed between subgroups to ensure that the gene cluster we obtained was both significant between gender and disease subtype and actually affects clinical outcomes.</p>
+<p><em>Note: we only had data about 76 patients, 3 of which were either outliers or could not be subtyped. Furthermore, of the patients who could be subtyped 21 were female while 52 were male, so please take our results with a grain of salt.</em></p>
+</div>
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="Difficulties-with-Data">Difficulties with Data<a class="anchor-link" href="#Difficulties-with-Data">&#182;</a></h1>
+</div>
+
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>We wished to do a project using biological data but were unsure how to go about obtaining sufficiently a large dataset that was freely available for analysis, because of this, we decided to work with a gene expression data set, as many interesting data sets are available from the Gene Expression Omnibus repository of the National Center for Biotechnology Information’s website which are amenable to analysis, as soft.gz files.</p>
+<p>It took our group a while to find a dataset that was of sufficient interest to all members before we settled on a study about gene expression levels in tumor tissue samples of patients with the brain cancer Medulloblastoma. Once we had chosen our topic, actually getting the data was fairly easy: we simply used the provided download link.</p>
+<ul>
+<li>ftp://ftp.ncbi.nlm.nih.gov/geo/datasets/GDS4nnn/GDS4471/soft/GDS4471.soft.gz</li>
+</ul>
+<p>The format of the data did make it somewhat challenging to load as it had been designed to be analyzed with a very specific set of tools. Although we did create a <code>.csv</code> file of the data, some of the gene names were corrupted and we were unable to index through it by category (i.e. gender). However, once we obtained the required software and installed it properly, we were able to load and analyze our data with ease.</p>
+<p>The NCBI recommends using the software <code>Bioconductor</code> for analysis of this type of data set, as it was specifically designed for working with gene expression data sets and efficiently indexing through them, other <code>Bioconductor</code> packages we used to analyze our data included, <code>Biobase</code>, a necessary package for both <code>GEOquery</code>, and <code>limma</code>. <code>GEOquery</code>, was used to transform the <code>.soft</code> file into a <code>GDS</code> object, which gave us access to meta data and a table of our expression data and then used to transform our data from a GDS object to an expression set (<code>eset</code>) object, so that it could be analyzed using limma. <code>limma</code> was used to find differentially expressed genes between our chosen samples</p>
+</div>
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="Main-Challenge">Main Challenge<a class="anchor-link" href="#Main-Challenge">&#182;</a></h1>
+</div>
+
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>The main challenge we encountered as a group was collectively understanding exactly what our dataset represented. For example, our data set contained gene expression information of tumors from various cancer patients, but it was not intuitively clear what the matrix of gene names and expression levels actually meant, which, correspondingly, made it harder to decide on an interesting question.</p>
+<p>Loading our data and properly installing Bioconductor proved to be the true bottleneck in our project though. We initially did not realize we had to use specialized software to load our <code>.soft</code> file and so we spent several hours loading it into a <code>.csv</code> file, only to lose key parts of the data set. We discovered that we needed <code>Bioconductor </code> to properly read and index through our dataset . However, it was quite a Sisyphean ordeal to install <code>Bioconductor</code> and its necessary packages, taking several days and a visit with the professor. “My God”</p>
+<p>To get the necessary packages working, we first had to install <code>libcurl</code> and <code>r-cran-xml</code>, in order to get <code>GEOquery</code> working. This was particularly arduous as installation constantly failed across multiple Oskiboxes, we have the sublime opportunity to witness the natural enforcement of Murphy’s Law.<br />However, once these problems were resolved, the only difficulties were determining what further packages were required to help analyze the data. (i.e. <code>gplots</code>, <code>pvca</code>.</p>
+</div>
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="Presentation-of-Findings">Presentation of Findings<a class="anchor-link" href="#Presentation-of-Findings">&#182;</a></h1>
+</div>
+
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>For those of you who may not remember their Intro to Biology class, all living things are made of cells. All cells have genes and depending on what that function that particular cell is carrying out, different genes will be translated into proteins. So even though all our cells contain our full genome, only certain parts of our genome will used within any single cell. Cancer cells, which are cells whose growth can no longer be controlled through normal cellular pathways, will translate a different set of genes into proteins than healthy cells will. By using a DNA microarray scientists are able to quantify which genes are being expressed within cells. The data we analyzed was the ‘expression’ or translation levels of over 54,000 genes (of which around 29,000 were unique) for 76 different tumors from patients with a form of cancer known as Medulloblastoma.</p>
+</div>
+<div class="cell border-box-sizing code_cell vbox">
+<div class="input hbox">
+<div class="prompt input_prompt">
+In&nbsp;[1]:
+</div>
+<div class="input_area box-flex1">
+<div class="highlight-ipynb"><pre class="ipynb"><span class="o">%</span><span class="k">load_ext</span> <span class="n">rmagic</span>
+</pre></div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell vbox">
+<div class="input hbox">
+<div class="prompt input_prompt">
+In&nbsp;[11]:
+</div>
+<div class="input_area box-flex1">
+<div class="highlight-ipynb"><pre class="ipynb"><span class="o">%%</span><span class="k">R</span>
+<span class="n">c_names</span> <span class="o">=</span> <span class="n">paste</span><span class="p">(</span><span class="s">&#39;Patient&#39;</span><span class="p">,</span> <span class="mi">1</span><span class="p">:</span><span class="mi">3</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="s">&#39; &#39;</span><span class="p">)</span>
+<span class="n">r_names</span> <span class="o">=</span> <span class="n">paste</span><span class="p">(</span><span class="s">&#39;Gene&#39;</span><span class="p">,</span> <span class="n">LETTERS</span><span class="p">[</span><span class="mi">1</span><span class="p">:</span><span class="mi">3</span><span class="p">],</span> <span class="n">sep</span><span class="o">=</span><span class="s">&#39; &#39;</span><span class="p">)</span>
+
+<span class="n">categories</span> <span class="o">=</span> <span class="n">c</span><span class="p">(</span><span class="s">&#39;High&#39;</span><span class="p">,</span> <span class="s">&#39;Medium&#39;</span><span class="p">,</span> <span class="s">&#39;Low&#39;</span><span class="p">)</span>
+<span class="n">data</span> <span class="o">=</span> <span class="n">sample</span><span class="p">(</span><span class="n">categories</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="mi">9</span><span class="p">,</span> <span class="n">replace</span><span class="o">=</span><span class="n">TRUE</span><span class="p">,</span> <span class="n">prob</span><span class="o">=</span><span class="n">c</span><span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="mi">3</span><span class="p">,</span> <span class="mi">1</span><span class="o">/</span><span class="mi">3</span><span class="p">,</span> <span class="mi">1</span><span class="o">/</span><span class="mi">3</span><span class="p">))</span>
+
+<span class="n">df</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">frame</span><span class="p">(</span><span class="n">matrix</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">nrow</span><span class="o">=</span><span class="mi">3</span><span class="p">),</span> <span class="n">row</span><span class="o">.</span><span class="n">names</span><span class="o">=</span><span class="n">r_names</span><span class="p">)</span>
+<span class="n">colnames</span><span class="p">(</span><span class="n">df</span><span class="p">)</span> <span class="o">=</span> <span class="n">c_names</span>
+
+<span class="k">print</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+
+<div class="vbox output_wrapper">
+<div class="output vbox">
+
+
+<div class="hbox output_area"><div class="prompt"></div>
+<div class="box-flex1 output_subarea output_display_data">
+
+
+<pre>
+       Patient 1 Patient 2 Patient 3
+Gene A      High      High       Low
+Gene B       Low    Medium       Low
+Gene C      High       Low       Low
+
+</pre>
+
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell vbox">
+<div class="input hbox">
+<div class="prompt input_prompt">
+In&nbsp;[]:
+</div>
+<div class="input_area box-flex1">
+<div class="highlight-ipynb"><pre class="ipynb">
+</pre></div>
+
+</div>
+</div>
+
 </div></p>
             </div>
             <!-- /.entry-content -->
