@@ -1,15 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom"><title>STAT133Project</title><link href="http://yuchengzhang.github.io/STAT133Project/" rel="alternate"></link><link href="http://yuchengzhang.github.io/STAT133Project/feeds/all.atom.xml" rel="self"></link><id>http://yuchengzhang.github.io/STAT133Project/</id><updated>2014-03-04T00:00:00-08:00</updated><entry><title>Project Report</title><link href="http://yuchengzhang.github.io/STAT133Project/nb4.html" rel="alternate"></link><updated>2014-03-04T00:00:00-08:00</updated><author><name>Benoit Dherin</name></author><id>tag:yuchengzhang.github.io,2014-03-04:STAT133Project/nb4.html</id><summary type="html">&lt;p&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;h2 id="team-members-responsible-for-this-notebook"&gt;Team members responsible for this notebook:&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;p&gt;Team member 1: &lt;strong&gt;Yucheng Zhang&lt;/strong&gt; - made markdown&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;Team member 2: &lt;strong&gt;Rebeccah Lavelle Terhune&lt;/strong&gt; - made markdown&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;Team member 3: &lt;strong&gt;Philip Hong&lt;/strong&gt; - made markdown&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;Team member 4: &lt;strong&gt;Renee Rao&lt;/strong&gt; - made markdown&lt;/p&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/div&gt;
-&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
 &lt;h1 id="Problem"&gt;Problem&lt;a class="anchor-link" href="#Problem"&gt;&amp;#182;&lt;/a&gt;&lt;/h1&gt;
 &lt;/div&gt;
 
@@ -1750,28 +1741,15 @@ A BibTeX entry for LaTeX users is
 &lt;/div&gt;
 
 &lt;/div&gt;
-&lt;div class="cell border-box-sizing code_cell vbox"&gt;
-&lt;div class="input hbox"&gt;
-&lt;div class="prompt input_prompt"&gt;
-In&amp;nbsp;[]:
-&lt;/div&gt;
-&lt;div class="input_area box-flex1"&gt;
-&lt;div class="highlight-ipynb"&gt;&lt;pre class="ipynb"&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-&lt;/div&gt;
-&lt;/div&gt;
-
-&lt;/div&gt;&lt;/p&gt;</summary></entry><entry><title>Data Analysis</title><link href="http://yuchengzhang.github.io/STAT133Project/nb3.html" rel="alternate"></link><updated>2014-03-03T00:00:00-08:00</updated><author><name>Benoit Dherin</name></author><id>tag:yuchengzhang.github.io,2014-03-03:STAT133Project/nb3.html</id><summary type="html">&lt;p&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
 &lt;h2 id="team-members-responsible-for-this-notebook"&gt;Team members responsible for this notebook:&lt;/h2&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;p&gt;Team member 1: &lt;strong&gt;Yucheng Zhang&lt;/strong&gt; - found differentially expressed genes between male and female and helped with heatmaps, analyzed differential gene expression across subgroups to find different which if any of the subgroups are dependent on gender&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;Team member 2: &lt;strong&gt;Renee Rao&lt;/strong&gt; - found differentially expressed genes between male and female and helped with heatmaps&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;Team member 3: &lt;strong&gt;Rebeccah Lavelle Terhune&lt;/strong&gt; - found differentially expressed genes between male and female and helped with heatmaps&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;Team member 4: &lt;strong&gt;Philip Hong&lt;/strong&gt; - found differentially expressed genes between male and female and helped with heatmaps&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Team member 1: &lt;strong&gt;Yucheng Zhang&lt;/strong&gt; - made markdown&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Team member 2: &lt;strong&gt;Rebeccah Lavelle Terhune&lt;/strong&gt; - made markdown&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Team member 3: &lt;strong&gt;Philip Hong&lt;/strong&gt; - made markdown&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Team member 4: &lt;strong&gt;Renee Rao&lt;/strong&gt; - made markdown&lt;/p&gt;&lt;/li&gt;
 &lt;/ul&gt;
-&lt;/div&gt;
+&lt;/div&gt;&lt;/p&gt;</summary></entry><entry><title>Data Analysis</title><link href="http://yuchengzhang.github.io/STAT133Project/nb3.html" rel="alternate"></link><updated>2014-03-03T00:00:00-08:00</updated><author><name>Benoit Dherin</name></author><id>tag:yuchengzhang.github.io,2014-03-03:STAT133Project/nb3.html</id><summary type="html">&lt;p&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
 &lt;h1 id="Data-Analysis"&gt;Data Analysis&lt;a class="anchor-link" href="#Data-Analysis"&gt;&amp;#182;&lt;/a&gt;&lt;/h1&gt;
 &lt;/div&gt;
@@ -4267,28 +4245,15 @@ In&amp;nbsp;[25]:
 &lt;/div&gt;
 
 &lt;/div&gt;
-&lt;div class="cell border-box-sizing code_cell vbox"&gt;
-&lt;div class="input hbox"&gt;
-&lt;div class="prompt input_prompt"&gt;
-In&amp;nbsp;[]:
-&lt;/div&gt;
-&lt;div class="input_area box-flex1"&gt;
-&lt;div class="highlight-ipynb"&gt;&lt;pre class="ipynb"&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-&lt;/div&gt;
-&lt;/div&gt;
-
-&lt;/div&gt;&lt;/p&gt;</summary></entry><entry><title>Data Cleaning</title><link href="http://yuchengzhang.github.io/STAT133Project/nb2.html" rel="alternate"></link><updated>2014-03-02T00:00:00-08:00</updated><author><name>Benoit Dherin</name></author><id>tag:yuchengzhang.github.io,2014-03-02:STAT133Project/nb2.html</id><summary type="html">&lt;p&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
 &lt;h2 id="team-members-responsible-for-this-notebook"&gt;Team members responsible for this notebook:&lt;/h2&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;p&gt;Team member 1: &lt;strong&gt;Yucheng Zhang&lt;/strong&gt; - made expression set and wrote markdown, saved eset as .Rda file.&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;Team member 2: &lt;strong&gt;Renee Rao&lt;/strong&gt; - figured out limma and Bioconductor.&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;Team member 3: &lt;strong&gt;Philip Hong&lt;/strong&gt; - helped troubleshoot Bioconductor and limma installation.&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;Team member 4: &lt;strong&gt;Rebeccah Lavelle Terhune&lt;/strong&gt; - helped troubleshoot Bioconductor and limma installation.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Team member 1: &lt;strong&gt;Yucheng Zhang&lt;/strong&gt; - found differentially expressed genes between male and female and helped with heatmaps, analyzed differential gene expression across subgroups to find different which if any of the subgroups are dependent on gender&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Team member 2: &lt;strong&gt;Renee Rao&lt;/strong&gt; - found differentially expressed genes between male and female and helped with heatmaps&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Team member 3: &lt;strong&gt;Rebeccah Lavelle Terhune&lt;/strong&gt; - found differentially expressed genes between male and female and helped with heatmaps&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Team member 4: &lt;strong&gt;Philip Hong&lt;/strong&gt; - found differentially expressed genes between male and female and helped with heatmaps&lt;/p&gt;&lt;/li&gt;
 &lt;/ul&gt;
-&lt;/div&gt;
+&lt;/div&gt;&lt;/p&gt;</summary></entry><entry><title>Data Cleaning</title><link href="http://yuchengzhang.github.io/STAT133Project/nb2.html" rel="alternate"></link><updated>2014-03-02T00:00:00-08:00</updated><author><name>Benoit Dherin</name></author><id>tag:yuchengzhang.github.io,2014-03-02:STAT133Project/nb2.html</id><summary type="html">&lt;p&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
 &lt;h1 id="Data-Cleaning"&gt;Data Cleaning&lt;a class="anchor-link" href="#Data-Cleaning"&gt;&amp;#182;&lt;/a&gt;&lt;/h1&gt;
 &lt;/div&gt;
@@ -4601,33 +4566,22 @@ In&amp;nbsp;[7]:
 &lt;/div&gt;
 
 &lt;/div&gt;
-&lt;div class="cell border-box-sizing code_cell vbox"&gt;
-&lt;div class="input hbox"&gt;
-&lt;div class="prompt input_prompt"&gt;
-In&amp;nbsp;[]:
-&lt;/div&gt;
-&lt;div class="input_area box-flex1"&gt;
-&lt;div class="highlight-ipynb"&gt;&lt;pre class="ipynb"&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-&lt;/div&gt;
-&lt;/div&gt;
-
-&lt;/div&gt;&lt;/p&gt;</summary></entry><entry><title>Data Gathering</title><link href="http://yuchengzhang.github.io/STAT133Project/nb1.html" rel="alternate"></link><updated>2014-03-01T00:00:00-08:00</updated><author><name>Benoit Dherin</name></author><id>tag:yuchengzhang.github.io,2014-03-01:STAT133Project/nb1.html</id><summary type="html">&lt;p&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
 &lt;h2 id="team-members-responsible-for-this-notebook"&gt;Team members responsible for this notebook:&lt;/h2&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;p&gt;Team member 1: &lt;strong&gt;Yucheng Zhang&lt;/strong&gt; - explored the possibility of using bash and python to get data into the correct format and wrote markdown.&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;Team member 2: &lt;strong&gt;Rebeccah Lavelle Terhune&lt;/strong&gt; - discovered way to format data with Excel and wrote markdown.&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;Team member 3: &lt;strong&gt;Philip Hong&lt;/strong&gt; - converted Excel data into .csv format and wrote markdown.&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;Team member 4: &lt;strong&gt;Renee Rao&lt;/strong&gt; - explored the possibility of using the Bioconductor software to get data into the correct format and wrote markdown.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Team member 1: &lt;strong&gt;Yucheng Zhang&lt;/strong&gt; - made expression set and wrote markdown, saved eset as .Rda file.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Team member 2: &lt;strong&gt;Renee Rao&lt;/strong&gt; - figured out limma and Bioconductor.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Team member 3: &lt;strong&gt;Philip Hong&lt;/strong&gt; - helped troubleshoot Bioconductor and limma installation.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Team member 4: &lt;strong&gt;Rebeccah Lavelle Terhune&lt;/strong&gt; - helped troubleshoot Bioconductor and limma installation.&lt;/p&gt;&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;We all worked together on data gathering, and we ended up using Renee's method.&lt;/p&gt;
-&lt;/div&gt;
+&lt;/div&gt;&lt;/p&gt;</summary></entry><entry><title>Data Gathering</title><link href="http://yuchengzhang.github.io/STAT133Project/nb1.html" rel="alternate"></link><updated>2014-03-01T00:00:00-08:00</updated><author><name>Benoit Dherin</name></author><id>tag:yuchengzhang.github.io,2014-03-01:STAT133Project/nb1.html</id><summary type="html">&lt;p&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;h1 id="Data-Collection"&gt;Data Collection&lt;a class="anchor-link" href="#Data-Collection"&gt;&amp;#182;&lt;/a&gt;&lt;/h1&gt;
+&lt;h1 id="Data-Gathering"&gt;Data Gathering&lt;a class="anchor-link" href="#Data-Gathering"&gt;&amp;#182;&lt;/a&gt;&lt;/h1&gt;
 &lt;/div&gt;
 
+&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
+&lt;p&gt;In this notebook we gathered the data for our project and turned it into a GDS object.&lt;/p&gt;
+&lt;/div&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
 &lt;h2 id="Making-Project-Directories"&gt;Making Project Directories&lt;a class="anchor-link" href="#Making-Project-Directories"&gt;&amp;#182;&lt;/a&gt;&lt;/h2&gt;
 &lt;/div&gt;
@@ -5081,6 +5035,16 @@ In&amp;nbsp;[8]:
 &lt;/div&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
 &lt;p&gt;The object is consistent with original file. This means we were able to succesfully create the GDS object from our dataset!&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
+&lt;h2 id="team-members-responsible-for-this-notebook"&gt;Team members responsible for this notebook:&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;Team member 1: &lt;strong&gt;Yucheng Zhang&lt;/strong&gt; - explored the possibility of using bash and python to get data into the correct format and wrote markdown.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Team member 2: &lt;strong&gt;Rebeccah Lavelle Terhune&lt;/strong&gt; - discovered way to format data with Excel and wrote markdown.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Team member 3: &lt;strong&gt;Philip Hong&lt;/strong&gt; - converted Excel data into .csv format and wrote markdown.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Team member 4: &lt;strong&gt;Renee Rao&lt;/strong&gt; - explored the possibility of using the Bioconductor software to get data into the correct format and wrote markdown.&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;We all worked together on data gathering, and we ended up using Renee's method.&lt;/p&gt;
 &lt;/div&gt;&lt;/p&gt;</summary></entry><entry><title>Reproducibility</title><link href="http://yuchengzhang.github.io/STAT133Project/reproducibility.html" rel="alternate"></link><updated>2014-02-28T00:00:00-08:00</updated><author><name>Benoit Dherin</name></author><id>tag:yuchengzhang.github.io,2014-02-28:STAT133Project/reproducibility.html</id><summary type="html">&lt;h1&gt;Reproducibility&lt;/h1&gt;
 &lt;h2&gt;Virtual OskiBox&lt;/h2&gt;
 &lt;h2&gt;Software Requirements&lt;/h2&gt;</summary></entry></feed>

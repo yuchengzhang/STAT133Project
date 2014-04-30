@@ -1792,20 +1792,11 @@ STAT133Project            </a>
                 <h2><a href="http://yuchengzhang.github.io/STAT133Project/nb4.html">Project Report</a></h2>
                 <div class="summary"><p>
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="team-members-responsible-for-this-notebook">Team members responsible for this notebook:</h2>
-<ul>
-<li><p>Team member 1: <strong>Yucheng Zhang</strong> - made markdown</p></li>
-<li><p>Team member 2: <strong>Rebeccah Lavelle Terhune</strong> - made markdown</p></li>
-<li><p>Team member 3: <strong>Philip Hong</strong> - made markdown</p></li>
-<li><p>Team member 4: <strong>Renee Rao</strong> - made markdown</p></li>
-</ul>
-</div>
-<div class="text_cell_render border-box-sizing rendered_html">
 <h1 id="Problem">Problem<a class="anchor-link" href="#Problem">&#182;</a></h1>
 </div>
 
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><em>Medulloblastoma</em> is highly malignant brain cancer that disproportionately affects children. While clinical outcomes associated ...</p></div></p>
+<p><em>Medulloblastoma</em> is highly malignant brain cancer that disproportionately affects children. While clinical outcomes associated with the disease are often poor— the 20 year survival rate for children is only 51 percent— they can be different between subgroups of the cancer. We extracted our data from a previously published paper ...</p></div></p>
                     <a class="btn btn-default btn-xs" href="http://yuchengzhang.github.io/STAT133Project/nb4.html">more ...</a>
                 </div>
             </article>
@@ -1814,10 +1805,11 @@ STAT133Project            </a>
                 <h2><a href="http://yuchengzhang.github.io/STAT133Project/nb3.html">Data Analysis</a></h2>
                 <div class="summary"><p>
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="team-members-responsible-for-this-notebook">Team members responsible for this notebook:</h2>
-<ul>
-<li><p>Team member 1: <strong>Yucheng Zhang</strong> - found differentially expressed genes between male and female and helped with heatmaps, analyzed differential gene expression across subgroups to find different which if any of the subgroups are dependent on gender</p></li>
-<li><p>Team member 2: <strong>Renee Rao</strong> - found differentially expressed ...</p></li></ul></div></p>
+<h1 id="Data-Analysis">Data Analysis<a class="anchor-link" href="#Data-Analysis">&#182;</a></h1>
+</div>
+
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>We found it interesting that the author classified patients based on gender. So we are going to look for differentially expressed genes across male and female patients. Then we are going to try to locate the gene cluster that is responsible for the gender differences by finding the ...</p></div></p>
                     <a class="btn btn-default btn-xs" href="http://yuchengzhang.github.io/STAT133Project/nb3.html">more ...</a>
                 </div>
             </article>
@@ -1826,12 +1818,29 @@ STAT133Project            </a>
                 <h2><a href="http://yuchengzhang.github.io/STAT133Project/nb2.html">Data Cleaning</a></h2>
                 <div class="summary"><p>
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="team-members-responsible-for-this-notebook">Team members responsible for this notebook:</h2>
+<h1 id="Data-Cleaning">Data Cleaning<a class="anchor-link" href="#Data-Cleaning">&#182;</a></h1>
+</div>
+
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><strong>Load rmagic:</strong></p>
+</div>
+<div class="cell border-box-sizing code_cell vbox">
+<div class="input hbox">
+<div class="prompt input_prompt">
+In&nbsp;[1]:
+</div>
+<div class="input_area box-flex1">
+<div class="highlight-ipynb"><pre class="ipynb"><span class="o">%</span><span class="k">load_ext</span> <span class="n">rmagic</span>
+</pre></div>
+
+</div>
+</div>
+
+</div>
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>(From Notebook 1) Loaded <strong>Biobase</strong> and <strong>GEOquery</strong> then used <code>getGEO</code> method of <code>GEOquery</code> to load <strong><code>bio_data.soft.gz</code></strong> into data, an <strong>S4 object</strong>.</p>
 <ul>
-<li><p>Team member 1: <strong>Yucheng Zhang</strong> - made expression set and wrote markdown, saved eset as .Rda file.</p></li>
-<li><p>Team member 2: <strong>Renee Rao</strong> - figured out limma and Bioconductor.</p></li>
-<li><p>Team member 3: <strong>Philip Hong</strong> - helped troubleshoot Bioconductor and limma installation.</p></li>
-<li><p>Team member 4: <strong>Rebeccah Lavelle Terhune</strong> - helped ...</p></li></ul></div></p>
+<li>The S4 class is a set of facilities in R provided for object oriented programming, and is highly used ...</li></ul></div></p>
                     <a class="btn btn-default btn-xs" href="http://yuchengzhang.github.io/STAT133Project/nb2.html">more ...</a>
                 </div>
             </article>
@@ -1840,11 +1849,30 @@ STAT133Project            </a>
                 <h2><a href="http://yuchengzhang.github.io/STAT133Project/nb1.html">Data Gathering</a></h2>
                 <div class="summary"><p>
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="team-members-responsible-for-this-notebook">Team members responsible for this notebook:</h2>
-<ul>
-<li><p>Team member 1: <strong>Yucheng Zhang</strong> - explored the possibility of using bash and python to get data into the correct format and wrote markdown.</p></li>
-<li><p>Team member 2: <strong>Rebeccah Lavelle Terhune</strong> - discovered way to format data with Excel and wrote markdown.</p></li>
-<li><p>Team member 3: <strong>Philip Hong ...</strong></p></li></ul></div></p>
+<h1 id="Data-Gathering">Data Gathering<a class="anchor-link" href="#Data-Gathering">&#182;</a></h1>
+</div>
+
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>In this notebook we gathered the data for our project and turned it into a GDS object.</p>
+</div>
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Making-Project-Directories">Making Project Directories<a class="anchor-link" href="#Making-Project-Directories">&#182;</a></h2>
+</div>
+
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><strong>We began by making the appropriate directories to organize our data and analysis into.</strong></p>
+</div>
+<div class="cell border-box-sizing code_cell vbox">
+<div class="input hbox">
+<div class="prompt input_prompt">
+In&nbsp;[1]:
+</div>
+<div class="input_area box-flex1">
+<div class="highlight-ipynb"><pre class="ipynb"><span class="o">%%</span><span class="k">bash</span>
+<span class="n">mkdir</span> <span class="o">../</span><span class="n">data</span> 
+<span class="n">mkdir</span> <span class="o">../</span><span class="n">data</span><span class="o">/</span><span class="n">raw</span>
+<span class="n">mkdir</span> <span class="o">../</span><span class="n">data</span><span class="o">/</span><span class="n">cleaned</span>
+<span class="n">mkdir</span> <span class="o">../</span><span class="n">data</span><span class="o">/</span><span class="n">simulated ...</span></pre></div></div></div></div></p>
                     <a class="btn btn-default btn-xs" href="http://yuchengzhang.github.io/STAT133Project/nb1.html">more ...</a>
                 </div>
             </article>
