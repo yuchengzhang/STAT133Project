@@ -1720,7 +1720,7 @@ init_mathjax();
             <meta property="og:type" content="article"/>
             <meta property="og:title" content="Data Cleaning"/>
             <meta property="og:url" content="http://yuchengzhang.github.io/STAT133Project/nb2.html"/>
-            <meta property="og:description" content="Data Cleaning¶ Load rmagic: In [1]: %load_ext rmagic (From Notebook 1) Loaded Biobase and GEOquery then used getGEO method of GEOquery to load bio_data.soft.gz into data, an S4 object. The S4 class is a set of facilities in R provided for object oriented programming, and is highly used ..."/>
+            <meta property="og:description" content="Since we our primary interest is in expression data for the tissue samples, we needed to turn our GDS (GEO Dataset) object into an expression set object in order to take advantage of the powerful tools Bioconductor provides to explore gene expression. To do this we used the built in ..."/>
 
     <!-- Bootstrap -->
         <link rel="stylesheet" href="http://yuchengzhang.github.io/STAT133Project/theme/css/bootstrap.min.css" type="text/css"/>
@@ -1815,16 +1815,16 @@ STAT133Project            </a>
                 </div>
                 <p>
 <div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="Data-Cleaning">Data Cleaning<a class="anchor-link" href="#Data-Cleaning">&#182;</a></h1>
+<p>Since we our primary interest is in expression data for the tissue samples, we needed to turn our GDS (GEO Dataset) object into an <strong>expression set object</strong> in order to take advantage of the powerful tools Bioconductor provides to explore gene expression. To do this we used the built in <code>GEOquery</code> function, <code>GDS2eSet</code>, which extracts expression data from GDS objects. To make computations more efficent, we used base two algorithms.</p>
 </div>
-
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><strong>Load rmagic:</strong></p>
+<p>Loaded <strong>Biobase</strong> and <strong>GEOquery</strong> then used <code>getGEO</code> method of <code>GEOquery</code> to load <strong><code>bio_data.soft.gz</code></strong> into data, an <strong>S4 object</strong>.</p>
+<p>The S4 class is a set of facilities in R provided for object oriented programming, and is highly used in Bioconductor.</p>
 </div>
 <div class="cell border-box-sizing code_cell vbox">
 <div class="input hbox">
 <div class="prompt input_prompt">
-In&nbsp;[1]:
+In&nbsp;[2]:
 </div>
 <div class="input_area box-flex1">
 <div class="highlight-ipynb"><pre class="ipynb"><span class="o">%</span><span class="k">load_ext</span> <span class="n">rmagic</span>
@@ -1834,16 +1834,10 @@ In&nbsp;[1]:
 </div>
 
 </div>
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>(From Notebook 1) Loaded <strong>Biobase</strong> and <strong>GEOquery</strong> then used <code>getGEO</code> method of <code>GEOquery</code> to load <strong><code>bio_data.soft.gz</code></strong> into data, an <strong>S4 object</strong>.</p>
-<ul>
-<li>The S4 class is a set of facilities in R provided for object oriented programming, and is highly used in Bioconductor.</li>
-</ul>
-</div>
 <div class="cell border-box-sizing code_cell vbox">
 <div class="input hbox">
 <div class="prompt input_prompt">
-In&nbsp;[2]:
+In&nbsp;[4]:
 </div>
 <div class="input_area box-flex1">
 <div class="highlight-ipynb"><pre class="ipynb"><span class="o">%%</span><span class="k">R</span>
@@ -1851,7 +1845,7 @@ In&nbsp;[2]:
 <span class="n">library</span><span class="p">(</span><span class="n">GEOquery</span><span class="p">)</span>
 
 <span class="n">bio_dir</span> <span class="o">=</span> <span class="s">&#39;../data/raw/bio_data.soft.gz&#39;</span>
-<span class="n">data</span> <span class="o">=</span> <span class="n">getGEO</span><span class="p">(</span><span class="n">filename</span><span class="o">=</span><span class="n">bio_dir</span><span class="p">)</span>
+<span class="n">data</span> <span class="o">=</span> <span class="n">getGEO</span><span class="p">(</span><span class="n">filename</span><span class="o">=</span><span class="n">bio_dir</span><span class="p">);</span>
 </pre></div>
 
 </div>
@@ -1862,44 +1856,11 @@ In&nbsp;[2]:
 
 
 <div class="hbox output_area"><div class="prompt"></div>
-<div class="box-flex1 output_subarea output_display_data">
-
-
+<div class="box-flex1 output_subarea output_stream output_stdout">
 <pre>
-Loading required package: BiocGenerics
-Loading required package: parallel
-
-Attaching package: ‘BiocGenerics’
-
-The following objects are masked from ‘package:parallel’:
-
-    clusterApply, clusterApplyLB, clusterCall, clusterEvalQ,
-    clusterExport, clusterMap, parApply, parCapply, parLapply,
-    parLapplyLB, parRapply, parSapply, parSapplyLB
-
-The following object is masked from ‘package:stats’:
-
-    xtabs
-
-The following objects are masked from ‘package:base’:
-
-    anyDuplicated, append, as.data.frame, as.vector, cbind, colnames,
-    do.call, duplicated, eval, evalq, Filter, Find, get, intersect,
-    is.unsorted, lapply, Map, mapply, match, mget, order, paste, pmax,
-    pmax.int, pmin, pmin.int, Position, rank, rbind, Reduce, rep.int,
-    rownames, sapply, setdiff, sort, table, tapply, union, unique,
-    unlist
-
-Welcome to Bioconductor
-
-    Vignettes contain introductory material; view with
-    &apos;browseVignettes()&apos;. To cite Bioconductor, see
-    &apos;citation(&quot;Biobase&quot;)&apos;, and for packages &apos;citation(&quot;pkgname&quot;)&apos;.
-
-Setting options(&apos;download.file.method.GEOquery&apos;=&apos;curl&apos;)
+Error in library(Biobase) : there is no package called ‘Biobase’
 
 </pre>
-
 </div>
 </div>
 
@@ -1911,13 +1872,10 @@ Setting options(&apos;download.file.method.GEOquery&apos;=&apos;curl&apos;)
 <h2 id="Creating-an-Expression-Set-Object">Creating an Expression Set Object<a class="anchor-link" href="#Creating-an-Expression-Set-Object">&#182;</a></h2>
 </div>
 
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>Since we our primary interest is in expression data for the tissue samples, we needed to turn our GDS (GEO Dataset) object into an <strong>expression set object</strong> in order to take advantage of the powerful tools Bioconductor provides to explore gene expression. To do this we used the built in <code>GEOquery</code> function, <code>GDS2eSet</code>, which extracts expression data from GDS objects. To make computations more efficent, we used base two algorithms.</p>
-</div>
 <div class="cell border-box-sizing code_cell vbox">
 <div class="input hbox">
 <div class="prompt input_prompt">
-In&nbsp;[3]:
+In&nbsp;[5]:
 </div>
 <div class="input_area box-flex1">
 <div class="highlight-ipynb"><pre class="ipynb"><span class="o">%%</span><span class="k">R</span>
@@ -1932,15 +1890,11 @@ In&nbsp;[3]:
 
 
 <div class="hbox output_area"><div class="prompt"></div>
-<div class="box-flex1 output_subarea output_display_data">
-
-
+<div class="box-flex1 output_subarea output_stream output_stdout">
 <pre>
-File stored at: 
-/tmp/RtmpfFNwMG/GPL570.annot.gz
+Error in withVisible({ : could not find function &quot;GDS2eSet&quot;
 
 </pre>
-
 </div>
 </div>
 

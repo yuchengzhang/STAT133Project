@@ -1720,7 +1720,7 @@ init_mathjax();
             <meta property="og:type" content="article"/>
             <meta property="og:title" content="Data Analysis"/>
             <meta property="og:url" content="http://yuchengzhang.github.io/STAT133Project/nb3.html"/>
-            <meta property="og:description" content="Data Analysis¶ We found it interesting that the author classified patients based on gender. So we are going to look for differentially expressed genes across male and female patients. Then we are going to try to locate the gene cluster that is responsible for the gender differences by finding the ..."/>
+            <meta property="og:description" content="We found it interesting that the author classified patients based on gender. So we are going to look for differentially expressed genes across male and female patients. Then we are going to try to locate the gene cluster that is responsible for the gender differences by finding the genes that ..."/>
 
     <!-- Bootstrap -->
         <link rel="stylesheet" href="http://yuchengzhang.github.io/STAT133Project/theme/css/bootstrap.min.css" type="text/css"/>
@@ -1815,14 +1815,14 @@ STAT133Project            </a>
                 </div>
                 <p>
 <div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="Data-Analysis">Data Analysis<a class="anchor-link" href="#Data-Analysis">&#182;</a></h1>
-</div>
-
-<div class="text_cell_render border-box-sizing rendered_html">
 <p>We found it interesting that the author classified patients based on gender. So we are going to look for differentially expressed genes across male and female patients. Then we are going to try to locate the gene cluster that is responsible for the gender differences by finding the genes that are differentially expressed based on disease state out of the genes we already know are differentially expressed based on gender.</p>
 </div>
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><strong>Load rmagic</strong></p>
+<h2 id="Loading-the-Data">Loading the Data<a class="anchor-link" href="#Loading-the-Data">&#182;</a></h2>
+</div>
+
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>In this cell we load <strong><code>pvca</code></strong> in order to be able to load our saved expression set object that is stored in bio_eset.Rda.</p>
 </div>
 <div class="cell border-box-sizing code_cell vbox">
 <div class="input hbox">
@@ -1836,13 +1836,6 @@ In&nbsp;[2]:
 </div>
 </div>
 
-</div>
-<div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Loading-the-Data">Loading the Data<a class="anchor-link" href="#Loading-the-Data">&#182;</a></h2>
-</div>
-
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>In this cell we load <strong><code>pvca</code></strong> in order to be able to load our saved expression set object that is stored in bio_eset.Rda.</p>
 </div>
 <div class="cell border-box-sizing code_cell vbox">
 <div class="input hbox">
@@ -1937,7 +1930,7 @@ In&nbsp;[4]:
 <div class="cell border-box-sizing code_cell vbox">
 <div class="input hbox">
 <div class="prompt input_prompt">
-In&nbsp;[*]:
+In&nbsp;[]:
 </div>
 <div class="input_area box-flex1">
 <div class="highlight-ipynb"><pre class="ipynb"><span class="o">%%</span><span class="k">R</span>

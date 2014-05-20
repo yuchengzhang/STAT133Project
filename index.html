@@ -1792,11 +1792,7 @@ STAT133Project            </a>
                 <h2><a href="http://yuchengzhang.github.io/STAT133Project/nb4.html">Project Report</a></h2>
                 <div class="summary"><p>
 <div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="Problem">Problem<a class="anchor-link" href="#Problem">&#182;</a></h1>
-</div>
-
-<div class="text_cell_render border-box-sizing rendered_html">
-<p><em>Medulloblastoma</em> is highly malignant brain cancer that disproportionately affects children. While clinical outcomes associated with the disease are often poor— the 20 year survival rate for children is only 51 percent— they can be different between subgroups of the cancer. We extracted our data from a previously published paper ...</p></div></p>
+<p><em>Medulloblastoma</em> is highly malignant brain cancer that disproportionately affects children. While clinical outcomes associated with the disease are often poor— the 20 year survival rate for children is only 51 percent— they can be different between subgroups of the cancer. We extracted our data from a previously published paper on ...</p></div></p>
                     <a class="btn btn-default btn-xs" href="http://yuchengzhang.github.io/STAT133Project/nb4.html">more ...</a>
                 </div>
             </article>
@@ -1805,11 +1801,7 @@ STAT133Project            </a>
                 <h2><a href="http://yuchengzhang.github.io/STAT133Project/nb3.html">Data Analysis</a></h2>
                 <div class="summary"><p>
 <div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="Data-Analysis">Data Analysis<a class="anchor-link" href="#Data-Analysis">&#182;</a></h1>
-</div>
-
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>We found it interesting that the author classified patients based on gender. So we are going to look for differentially expressed genes across male and female patients. Then we are going to try to locate the gene cluster that is responsible for the gender differences by finding the ...</p></div></p>
+<p>We found it interesting that the author classified patients based on gender. So we are going to look for differentially expressed genes across male and female patients. Then we are going to try to locate the gene cluster that is responsible for the gender differences by finding the genes that ...</p></div></p>
                     <a class="btn btn-default btn-xs" href="http://yuchengzhang.github.io/STAT133Project/nb3.html">more ...</a>
                 </div>
             </article>
@@ -1818,29 +1810,7 @@ STAT133Project            </a>
                 <h2><a href="http://yuchengzhang.github.io/STAT133Project/nb2.html">Data Cleaning</a></h2>
                 <div class="summary"><p>
 <div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="Data-Cleaning">Data Cleaning<a class="anchor-link" href="#Data-Cleaning">&#182;</a></h1>
-</div>
-
-<div class="text_cell_render border-box-sizing rendered_html">
-<p><strong>Load rmagic:</strong></p>
-</div>
-<div class="cell border-box-sizing code_cell vbox">
-<div class="input hbox">
-<div class="prompt input_prompt">
-In&nbsp;[1]:
-</div>
-<div class="input_area box-flex1">
-<div class="highlight-ipynb"><pre class="ipynb"><span class="o">%</span><span class="k">load_ext</span> <span class="n">rmagic</span>
-</pre></div>
-
-</div>
-</div>
-
-</div>
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>(From Notebook 1) Loaded <strong>Biobase</strong> and <strong>GEOquery</strong> then used <code>getGEO</code> method of <code>GEOquery</code> to load <strong><code>bio_data.soft.gz</code></strong> into data, an <strong>S4 object</strong>.</p>
-<ul>
-<li>The S4 class is a set of facilities in R provided for object oriented programming, and is highly used ...</li></ul></div></p>
+<p>Since we our primary interest is in expression data for the tissue samples, we needed to turn our GDS (GEO Dataset) object into an <strong>expression set object</strong> in order to take advantage of the powerful tools Bioconductor provides to explore gene expression. To do this we used the built in ...</p></div></p>
                     <a class="btn btn-default btn-xs" href="http://yuchengzhang.github.io/STAT133Project/nb2.html">more ...</a>
                 </div>
             </article>
@@ -1849,30 +1819,7 @@ In&nbsp;[1]:
                 <h2><a href="http://yuchengzhang.github.io/STAT133Project/nb1.html">Data Gathering</a></h2>
                 <div class="summary"><p>
 <div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="Data-Gathering">Data Gathering<a class="anchor-link" href="#Data-Gathering">&#182;</a></h1>
-</div>
-
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>In this notebook we gathered the data for our project and turned it into a GDS object.</p>
-</div>
-<div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Making-Project-Directories">Making Project Directories<a class="anchor-link" href="#Making-Project-Directories">&#182;</a></h2>
-</div>
-
-<div class="text_cell_render border-box-sizing rendered_html">
-<p><strong>We began by making the appropriate directories to organize our data and analysis into.</strong></p>
-</div>
-<div class="cell border-box-sizing code_cell vbox">
-<div class="input hbox">
-<div class="prompt input_prompt">
-In&nbsp;[1]:
-</div>
-<div class="input_area box-flex1">
-<div class="highlight-ipynb"><pre class="ipynb"><span class="o">%%</span><span class="k">bash</span>
-<span class="n">mkdir</span> <span class="o">../</span><span class="n">data</span> 
-<span class="n">mkdir</span> <span class="o">../</span><span class="n">data</span><span class="o">/</span><span class="n">raw</span>
-<span class="n">mkdir</span> <span class="o">../</span><span class="n">data</span><span class="o">/</span><span class="n">cleaned</span>
-<span class="n">mkdir</span> <span class="o">../</span><span class="n">data</span><span class="o">/</span><span class="n">simulated ...</span></pre></div></div></div></div></p>
+<p>We decided to analyze a microDNA expression dataset from the <strong>NCBI's (National Center for Biotechnology Information)</strong> database of gene expression arrays, the <strong>Gene Expression Omnibus (GEO)</strong> repository. Eventually we settled on one that contained gene expression information for 76 tissue samples from child patients with a particular form of ...</p></div></p>
                     <a class="btn btn-default btn-xs" href="http://yuchengzhang.github.io/STAT133Project/nb1.html">more ...</a>
                 </div>
             </article>

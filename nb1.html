@@ -1720,7 +1720,7 @@ init_mathjax();
             <meta property="og:type" content="article"/>
             <meta property="og:title" content="Data Gathering"/>
             <meta property="og:url" content="http://yuchengzhang.github.io/STAT133Project/nb1.html"/>
-            <meta property="og:description" content="Data Gathering¶ In this notebook we gathered the data for our project and turned it into a GDS object. Making Project Directories¶ We began by making the appropriate directories to organize our data and analysis into. In [1]: %%bash mkdir ../data mkdir ../data/raw mkdir ../data/cleaned mkdir ../data/simulated ..."/>
+            <meta property="og:description" content="We decided to analyze a microDNA expression dataset from the NCBI's (National Center for Biotechnology Information) database of gene expression arrays, the Gene Expression Omnibus (GEO) repository. Eventually we settled on one that contained gene expression information for 76 tissue samples from child patients with a particular form of ..."/>
 
     <!-- Bootstrap -->
         <link rel="stylesheet" href="http://yuchengzhang.github.io/STAT133Project/theme/css/bootstrap.min.css" type="text/css"/>
@@ -1815,18 +1815,14 @@ STAT133Project            </a>
                 </div>
                 <p>
 <div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="Data-Gathering">Data Gathering<a class="anchor-link" href="#Data-Gathering">&#182;</a></h1>
-</div>
-
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>In this notebook we gathered the data for our project and turned it into a GDS object.</p>
+<p>We decided to analyze a microDNA expression dataset from the <strong>NCBI's (National Center for Biotechnology Information)</strong> database of gene expression arrays, the <strong>Gene Expression Omnibus (GEO)</strong> repository. Eventually we settled on one that contained gene expression information for 76 tissue samples from child patients with a particular form of brain cancer, Medulloblastoma.</p>
+<p>Eventually, we decided on the data set from this page <a href="www.ncbi.nlm.nih.gov/sites/GDSbrowser?acc=GDS4471">www.ncbi.nlm.nih.gov/sites/GDSbrowser?acc=GDS4471</a></p>
 </div>
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Making-Project-Directories">Making Project Directories<a class="anchor-link" href="#Making-Project-Directories">&#182;</a></h2>
+<p>In this notebook we will gather the data for our project and turned it into a GDS object.</p>
 </div>
-
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><strong>We began by making the appropriate directories to organize our data and analysis into.</strong></p>
+<p>Let's begin by creating the appropriate directories to organize our data and analysis into.</p>
 </div>
 <div class="cell border-box-sizing code_cell vbox">
 <div class="input hbox">
@@ -1867,17 +1863,6 @@ mkdir: cannot create directory &#96;../script&apos;: File exists
 </div>
 </div>
 
-</div>
-<div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Choosing-a-Dataset">Choosing a Dataset<a class="anchor-link" href="#Choosing-a-Dataset">&#182;</a></h2>
-</div>
-
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>We decided to analyze a microDNA expression dataset from the <strong>NCBI's (National Center for Biotechnology Information)</strong> database of gene expression arrays, the <strong>Gene Expression Omnibus (GEO)</strong> repository. Eventually we settled on one that contained gene expression information for 76 tissue samples from child patients with a particular form of brain cancer, Medulloblastoma.</p>
-<p>Eventually, we decided on the data set from this page:</p>
-<ul>
-<li><strong>www.ncbi.nlm.nih.gov/sites/GDSbrowser?acc=GDS4471</strong></li>
-</ul>
 </div>
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="Loading-Data">Loading Data<a class="anchor-link" href="#Loading-Data">&#182;</a></h2>

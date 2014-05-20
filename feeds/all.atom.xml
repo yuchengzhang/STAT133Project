@@ -1,10 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom"><title>STAT133Project</title><link href="http://yuchengzhang.github.io/STAT133Project/" rel="alternate"></link><link href="http://yuchengzhang.github.io/STAT133Project/feeds/all.atom.xml" rel="self"></link><id>http://yuchengzhang.github.io/STAT133Project/</id><updated>2014-03-04T00:00:00-08:00</updated><entry><title>Project Report</title><link href="http://yuchengzhang.github.io/STAT133Project/nb4.html" rel="alternate"></link><updated>2014-03-04T00:00:00-08:00</updated><author><name>Benoit Dherin</name></author><id>tag:yuchengzhang.github.io,2014-03-04:STAT133Project/nb4.html</id><summary type="html">&lt;p&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;h1 id="Problem"&gt;Problem&lt;a class="anchor-link" href="#Problem"&gt;&amp;#182;&lt;/a&gt;&lt;/h1&gt;
-&lt;/div&gt;
-
-&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
 &lt;p&gt;&lt;em&gt;Medulloblastoma&lt;/em&gt; is highly malignant brain cancer that disproportionately affects children. While clinical outcomes associated with the disease are often poor— the 20 year survival rate for children is only 51 percent— they can be different between subgroups of the cancer. We extracted our data from a previously published paper on the subtypes of &lt;em&gt;Medulloblastoma&lt;/em&gt;: SHH, WNT, Group 3 and Group 4. After realizing there was a significant gender disparity between some of the author’s own molecular subgroups we decided to try to isolate the genes associated with this gender difference.&lt;/p&gt;
 &lt;p&gt;We got our gene expression data from a study by Robinson et al in 2012&lt;span class="math"&gt;\(^1\)&lt;/span&gt;, in which the the subtypes of cancer discovered by the original authors of the paper had significantly different gender distributions, especially across the WNT and G3 subtypes which were 75% female and 93.75% male, respectively. We wanted to isolate the gene cluster that is associated with the gender disparity between the molecular subgroups.&lt;/p&gt;
 &lt;p&gt;Because differentially expressed genes do not necessarily affect tumor development, we first located genes that were differentially expressed between male and female patients, then out of these genes, we found those that were also differentially expressed between subgroups to ensure that the gene cluster we obtained was significant between both gender and disease subtype, and actually affected tumor development and clinical outcomes.&lt;/p&gt;
@@ -1751,14 +1747,14 @@ A BibTeX entry for LaTeX users is
 &lt;/ul&gt;
 &lt;/div&gt;&lt;/p&gt;</summary></entry><entry><title>Data Analysis</title><link href="http://yuchengzhang.github.io/STAT133Project/nb3.html" rel="alternate"></link><updated>2014-03-03T00:00:00-08:00</updated><author><name>Benoit Dherin</name></author><id>tag:yuchengzhang.github.io,2014-03-03:STAT133Project/nb3.html</id><summary type="html">&lt;p&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;h1 id="Data-Analysis"&gt;Data Analysis&lt;a class="anchor-link" href="#Data-Analysis"&gt;&amp;#182;&lt;/a&gt;&lt;/h1&gt;
-&lt;/div&gt;
-
-&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
 &lt;p&gt;We found it interesting that the author classified patients based on gender. So we are going to look for differentially expressed genes across male and female patients. Then we are going to try to locate the gene cluster that is responsible for the gender differences by finding the genes that are differentially expressed based on disease state out of the genes we already know are differentially expressed based on gender.&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;p&gt;&lt;strong&gt;Load rmagic&lt;/strong&gt;&lt;/p&gt;
+&lt;h2 id="Loading-the-Data"&gt;Loading the Data&lt;a class="anchor-link" href="#Loading-the-Data"&gt;&amp;#182;&lt;/a&gt;&lt;/h2&gt;
+&lt;/div&gt;
+
+&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
+&lt;p&gt;In this cell we load &lt;strong&gt;&lt;code&gt;pvca&lt;/code&gt;&lt;/strong&gt; in order to be able to load our saved expression set object that is stored in bio_eset.Rda.&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class="cell border-box-sizing code_cell vbox"&gt;
 &lt;div class="input hbox"&gt;
@@ -1772,13 +1768,6 @@ In&amp;nbsp;[2]:
 &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;/div&gt;
-&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;h2 id="Loading-the-Data"&gt;Loading the Data&lt;a class="anchor-link" href="#Loading-the-Data"&gt;&amp;#182;&lt;/a&gt;&lt;/h2&gt;
-&lt;/div&gt;
-
-&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;p&gt;In this cell we load &lt;strong&gt;&lt;code&gt;pvca&lt;/code&gt;&lt;/strong&gt; in order to be able to load our saved expression set object that is stored in bio_eset.Rda.&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class="cell border-box-sizing code_cell vbox"&gt;
 &lt;div class="input hbox"&gt;
@@ -1873,7 +1862,7 @@ In&amp;nbsp;[4]:
 &lt;div class="cell border-box-sizing code_cell vbox"&gt;
 &lt;div class="input hbox"&gt;
 &lt;div class="prompt input_prompt"&gt;
-In&amp;nbsp;[*]:
+In&amp;nbsp;[]:
 &lt;/div&gt;
 &lt;div class="input_area box-flex1"&gt;
 &lt;div class="highlight-ipynb"&gt;&lt;pre class="ipynb"&gt;&lt;span class="o"&gt;%%&lt;/span&gt;&lt;span class="k"&gt;R&lt;/span&gt;
@@ -4255,16 +4244,16 @@ In&amp;nbsp;[25]:
 &lt;/ul&gt;
 &lt;/div&gt;&lt;/p&gt;</summary></entry><entry><title>Data Cleaning</title><link href="http://yuchengzhang.github.io/STAT133Project/nb2.html" rel="alternate"></link><updated>2014-03-02T00:00:00-08:00</updated><author><name>Benoit Dherin</name></author><id>tag:yuchengzhang.github.io,2014-03-02:STAT133Project/nb2.html</id><summary type="html">&lt;p&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;h1 id="Data-Cleaning"&gt;Data Cleaning&lt;a class="anchor-link" href="#Data-Cleaning"&gt;&amp;#182;&lt;/a&gt;&lt;/h1&gt;
+&lt;p&gt;Since we our primary interest is in expression data for the tissue samples, we needed to turn our GDS (GEO Dataset) object into an &lt;strong&gt;expression set object&lt;/strong&gt; in order to take advantage of the powerful tools Bioconductor provides to explore gene expression. To do this we used the built in &lt;code&gt;GEOquery&lt;/code&gt; function, &lt;code&gt;GDS2eSet&lt;/code&gt;, which extracts expression data from GDS objects. To make computations more efficent, we used base two algorithms.&lt;/p&gt;
 &lt;/div&gt;
-
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;p&gt;&lt;strong&gt;Load rmagic:&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Loaded &lt;strong&gt;Biobase&lt;/strong&gt; and &lt;strong&gt;GEOquery&lt;/strong&gt; then used &lt;code&gt;getGEO&lt;/code&gt; method of &lt;code&gt;GEOquery&lt;/code&gt; to load &lt;strong&gt;&lt;code&gt;bio_data.soft.gz&lt;/code&gt;&lt;/strong&gt; into data, an &lt;strong&gt;S4 object&lt;/strong&gt;.&lt;/p&gt;
+&lt;p&gt;The S4 class is a set of facilities in R provided for object oriented programming, and is highly used in Bioconductor.&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class="cell border-box-sizing code_cell vbox"&gt;
 &lt;div class="input hbox"&gt;
 &lt;div class="prompt input_prompt"&gt;
-In&amp;nbsp;[1]:
+In&amp;nbsp;[2]:
 &lt;/div&gt;
 &lt;div class="input_area box-flex1"&gt;
 &lt;div class="highlight-ipynb"&gt;&lt;pre class="ipynb"&gt;&lt;span class="o"&gt;%&lt;/span&gt;&lt;span class="k"&gt;load_ext&lt;/span&gt; &lt;span class="n"&gt;rmagic&lt;/span&gt;
@@ -4274,16 +4263,10 @@ In&amp;nbsp;[1]:
 &lt;/div&gt;
 
 &lt;/div&gt;
-&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;p&gt;(From Notebook 1) Loaded &lt;strong&gt;Biobase&lt;/strong&gt; and &lt;strong&gt;GEOquery&lt;/strong&gt; then used &lt;code&gt;getGEO&lt;/code&gt; method of &lt;code&gt;GEOquery&lt;/code&gt; to load &lt;strong&gt;&lt;code&gt;bio_data.soft.gz&lt;/code&gt;&lt;/strong&gt; into data, an &lt;strong&gt;S4 object&lt;/strong&gt;.&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;The S4 class is a set of facilities in R provided for object oriented programming, and is highly used in Bioconductor.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/div&gt;
 &lt;div class="cell border-box-sizing code_cell vbox"&gt;
 &lt;div class="input hbox"&gt;
 &lt;div class="prompt input_prompt"&gt;
-In&amp;nbsp;[2]:
+In&amp;nbsp;[4]:
 &lt;/div&gt;
 &lt;div class="input_area box-flex1"&gt;
 &lt;div class="highlight-ipynb"&gt;&lt;pre class="ipynb"&gt;&lt;span class="o"&gt;%%&lt;/span&gt;&lt;span class="k"&gt;R&lt;/span&gt;
@@ -4291,7 +4274,7 @@ In&amp;nbsp;[2]:
 &lt;span class="n"&gt;library&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;GEOquery&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
 
 &lt;span class="n"&gt;bio_dir&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s"&gt;&amp;#39;../data/raw/bio_data.soft.gz&amp;#39;&lt;/span&gt;
-&lt;span class="n"&gt;data&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;getGEO&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;filename&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="n"&gt;bio_dir&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="n"&gt;data&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;getGEO&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;filename&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="n"&gt;bio_dir&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 
 &lt;/div&gt;
@@ -4302,44 +4285,11 @@ In&amp;nbsp;[2]:
 
 
 &lt;div class="hbox output_area"&gt;&lt;div class="prompt"&gt;&lt;/div&gt;
-&lt;div class="box-flex1 output_subarea output_display_data"&gt;
-
-
+&lt;div class="box-flex1 output_subarea output_stream output_stdout"&gt;
 &lt;pre&gt;
-Loading required package: BiocGenerics
-Loading required package: parallel
-
-Attaching package: ‘BiocGenerics’
-
-The following objects are masked from ‘package:parallel’:
-
-    clusterApply, clusterApplyLB, clusterCall, clusterEvalQ,
-    clusterExport, clusterMap, parApply, parCapply, parLapply,
-    parLapplyLB, parRapply, parSapply, parSapplyLB
-
-The following object is masked from ‘package:stats’:
-
-    xtabs
-
-The following objects are masked from ‘package:base’:
-
-    anyDuplicated, append, as.data.frame, as.vector, cbind, colnames,
-    do.call, duplicated, eval, evalq, Filter, Find, get, intersect,
-    is.unsorted, lapply, Map, mapply, match, mget, order, paste, pmax,
-    pmax.int, pmin, pmin.int, Position, rank, rbind, Reduce, rep.int,
-    rownames, sapply, setdiff, sort, table, tapply, union, unique,
-    unlist
-
-Welcome to Bioconductor
-
-    Vignettes contain introductory material; view with
-    &amp;apos;browseVignettes()&amp;apos;. To cite Bioconductor, see
-    &amp;apos;citation(&amp;quot;Biobase&amp;quot;)&amp;apos;, and for packages &amp;apos;citation(&amp;quot;pkgname&amp;quot;)&amp;apos;.
-
-Setting options(&amp;apos;download.file.method.GEOquery&amp;apos;=&amp;apos;curl&amp;apos;)
+Error in library(Biobase) : there is no package called ‘Biobase’
 
 &lt;/pre&gt;
-
 &lt;/div&gt;
 &lt;/div&gt;
 
@@ -4351,13 +4301,10 @@ Setting options(&amp;apos;download.file.method.GEOquery&amp;apos;=&amp;apos;curl
 &lt;h2 id="Creating-an-Expression-Set-Object"&gt;Creating an Expression Set Object&lt;a class="anchor-link" href="#Creating-an-Expression-Set-Object"&gt;&amp;#182;&lt;/a&gt;&lt;/h2&gt;
 &lt;/div&gt;
 
-&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;p&gt;Since we our primary interest is in expression data for the tissue samples, we needed to turn our GDS (GEO Dataset) object into an &lt;strong&gt;expression set object&lt;/strong&gt; in order to take advantage of the powerful tools Bioconductor provides to explore gene expression. To do this we used the built in &lt;code&gt;GEOquery&lt;/code&gt; function, &lt;code&gt;GDS2eSet&lt;/code&gt;, which extracts expression data from GDS objects. To make computations more efficent, we used base two algorithms.&lt;/p&gt;
-&lt;/div&gt;
 &lt;div class="cell border-box-sizing code_cell vbox"&gt;
 &lt;div class="input hbox"&gt;
 &lt;div class="prompt input_prompt"&gt;
-In&amp;nbsp;[3]:
+In&amp;nbsp;[5]:
 &lt;/div&gt;
 &lt;div class="input_area box-flex1"&gt;
 &lt;div class="highlight-ipynb"&gt;&lt;pre class="ipynb"&gt;&lt;span class="o"&gt;%%&lt;/span&gt;&lt;span class="k"&gt;R&lt;/span&gt;
@@ -4372,15 +4319,11 @@ In&amp;nbsp;[3]:
 
 
 &lt;div class="hbox output_area"&gt;&lt;div class="prompt"&gt;&lt;/div&gt;
-&lt;div class="box-flex1 output_subarea output_display_data"&gt;
-
-
+&lt;div class="box-flex1 output_subarea output_stream output_stdout"&gt;
 &lt;pre&gt;
-File stored at: 
-/tmp/RtmpfFNwMG/GPL570.annot.gz
+Error in withVisible({ : could not find function &amp;quot;GDS2eSet&amp;quot;
 
 &lt;/pre&gt;
-
 &lt;/div&gt;
 &lt;/div&gt;
 
@@ -4576,18 +4519,14 @@ In&amp;nbsp;[7]:
 &lt;/ul&gt;
 &lt;/div&gt;&lt;/p&gt;</summary></entry><entry><title>Data Gathering</title><link href="http://yuchengzhang.github.io/STAT133Project/nb1.html" rel="alternate"></link><updated>2014-03-01T00:00:00-08:00</updated><author><name>Benoit Dherin</name></author><id>tag:yuchengzhang.github.io,2014-03-01:STAT133Project/nb1.html</id><summary type="html">&lt;p&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;h1 id="Data-Gathering"&gt;Data Gathering&lt;a class="anchor-link" href="#Data-Gathering"&gt;&amp;#182;&lt;/a&gt;&lt;/h1&gt;
-&lt;/div&gt;
-
-&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;p&gt;In this notebook we gathered the data for our project and turned it into a GDS object.&lt;/p&gt;
+&lt;p&gt;We decided to analyze a microDNA expression dataset from the &lt;strong&gt;NCBI's (National Center for Biotechnology Information)&lt;/strong&gt; database of gene expression arrays, the &lt;strong&gt;Gene Expression Omnibus (GEO)&lt;/strong&gt; repository. Eventually we settled on one that contained gene expression information for 76 tissue samples from child patients with a particular form of brain cancer, Medulloblastoma.&lt;/p&gt;
+&lt;p&gt;Eventually, we decided on the data set from this page &lt;a href="www.ncbi.nlm.nih.gov/sites/GDSbrowser?acc=GDS4471"&gt;www.ncbi.nlm.nih.gov/sites/GDSbrowser?acc=GDS4471&lt;/a&gt;&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;h2 id="Making-Project-Directories"&gt;Making Project Directories&lt;a class="anchor-link" href="#Making-Project-Directories"&gt;&amp;#182;&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;In this notebook we will gather the data for our project and turned it into a GDS object.&lt;/p&gt;
 &lt;/div&gt;
-
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;p&gt;&lt;strong&gt;We began by making the appropriate directories to organize our data and analysis into.&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Let's begin by creating the appropriate directories to organize our data and analysis into.&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class="cell border-box-sizing code_cell vbox"&gt;
 &lt;div class="input hbox"&gt;
@@ -4628,17 +4567,6 @@ mkdir: cannot create directory &amp;#96;../script&amp;apos;: File exists
 &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;/div&gt;
-&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;h2 id="Choosing-a-Dataset"&gt;Choosing a Dataset&lt;a class="anchor-link" href="#Choosing-a-Dataset"&gt;&amp;#182;&lt;/a&gt;&lt;/h2&gt;
-&lt;/div&gt;
-
-&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;p&gt;We decided to analyze a microDNA expression dataset from the &lt;strong&gt;NCBI's (National Center for Biotechnology Information)&lt;/strong&gt; database of gene expression arrays, the &lt;strong&gt;Gene Expression Omnibus (GEO)&lt;/strong&gt; repository. Eventually we settled on one that contained gene expression information for 76 tissue samples from child patients with a particular form of brain cancer, Medulloblastoma.&lt;/p&gt;
-&lt;p&gt;Eventually, we decided on the data set from this page:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;www.ncbi.nlm.nih.gov/sites/GDSbrowser?acc=GDS4471&lt;/strong&gt;&lt;/li&gt;
-&lt;/ul&gt;
 &lt;/div&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
 &lt;h2 id="Loading-Data"&gt;Loading Data&lt;a class="anchor-link" href="#Loading-Data"&gt;&amp;#182;&lt;/a&gt;&lt;/h2&gt;
