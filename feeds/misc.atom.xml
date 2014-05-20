@@ -6,7 +6,7 @@
 
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
 &lt;p&gt;&lt;em&gt;Medulloblastoma&lt;/em&gt; is highly malignant brain cancer that disproportionately affects children. While clinical outcomes associated with the disease are often poor— the 20 year survival rate for children is only 51 percent— they can be different between subgroups of the cancer. We extracted our data from a previously published paper on the subtypes of &lt;em&gt;Medulloblastoma&lt;/em&gt;: SHH, WNT, Group 3 and Group 4. After realizing there was a significant gender disparity between some of the author’s own molecular subgroups we decided to try to isolate the genes associated with this gender difference.&lt;/p&gt;
-&lt;p&gt;We got our gene expression data from a study by Robinson et al in 2012\(^1\), in which the the subtypes of cancer discovered by the original authors of the paper had significantly different gender distributions, especially across the WNT and G3 subtypes which were 75% female and 93.75% male, respectively. We wanted to isolate the gene cluster that is associated with the gender disparity between the molecular subgroups.&lt;/p&gt;
+&lt;p&gt;We got our gene expression data from a study by Robinson et al in 2012&lt;span class="math"&gt;\(^1\)&lt;/span&gt;, in which the the subtypes of cancer discovered by the original authors of the paper had significantly different gender distributions, especially across the WNT and G3 subtypes which were 75% female and 93.75% male, respectively. We wanted to isolate the gene cluster that is associated with the gender disparity between the molecular subgroups.&lt;/p&gt;
 &lt;p&gt;Because differentially expressed genes do not necessarily affect tumor development, we first located genes that were differentially expressed between male and female patients, then out of these genes, we found those that were also differentially expressed between subgroups to ensure that the gene cluster we obtained was significant between both gender and disease subtype, and actually affected tumor development and clinical outcomes.&lt;/p&gt;
 &lt;p&gt;&lt;em&gt;Note: We only analyzed data on about 76 patients, 3 of which were either outliers or could not be subtyped. Furthermore, of the patients who could be subtyped 21 were female while 52 were male, so of course our results are necessarily hesitant.&lt;/em&gt;&lt;/p&gt;
 &lt;/div&gt;
@@ -1631,7 +1631,7 @@ NIKEdwAAAABJRU5ErkJggg==
 &lt;/div&gt;
 
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;p&gt;1 Robinson et al. &amp;quot;Novel Mutations Target Distinct Subgroups of Medulloblastoma.&amp;quot; Nature 448 (2012): 43-48. NCBI. Web. 20 Apr. 2014. &lt;a href="http://www.ncbi.nlm.nih.gov/pmc/articles/PMC3412905/"&gt;&lt;code class="url"&gt;http://www.ncbi.nlm.nih.gov/pmc/articles/PMC3412905/&lt;/code&gt;&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;1 Robinson et al. &amp;quot;Novel Mutations Target Distinct Subgroups of Medulloblastoma.&amp;quot; Nature 448 (2012): 43-48. NCBI. Web. 20 Apr. 2014. &lt;a href="http://www.ncbi.nlm.nih.gov/pmc/articles/PMC3412905/"&gt;http://www.ncbi.nlm.nih.gov/pmc/articles/PMC3412905/&lt;/a&gt;.&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class="cell border-box-sizing code_cell vbox"&gt;
 &lt;div class="input hbox"&gt;
@@ -5045,6 +5045,4 @@ In&amp;nbsp;[8]:
 &lt;li&gt;&lt;p&gt;Team member 4: &lt;strong&gt;Renee Rao&lt;/strong&gt; - explored the possibility of using the Bioconductor software to get data into the correct format and wrote markdown.&lt;/p&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;We all worked together on data gathering, and we ended up using Renee's method.&lt;/p&gt;
-&lt;/div&gt;&lt;/p&gt;</summary></entry><entry><title>Reproducibility</title><link href="http://yuchengzhang.github.io/STAT133Project/reproducibility.html" rel="alternate"></link><updated>2014-02-28T00:00:00-08:00</updated><author><name>Benoit Dherin</name></author><id>tag:yuchengzhang.github.io,2014-02-28:STAT133Project/reproducibility.html</id><summary type="html">&lt;h1&gt;Reproducibility&lt;/h1&gt;
-&lt;h2&gt;Virtual OskiBox&lt;/h2&gt;
-&lt;h2&gt;Software Requirements&lt;/h2&gt;</summary></entry></feed>
+&lt;/div&gt;&lt;/p&gt;</summary></entry></feed>
